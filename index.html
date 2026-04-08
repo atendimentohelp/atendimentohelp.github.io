@@ -83,15 +83,20 @@
     }
 
     .atendimento-badge {
-      background: #eef3ff;
+      background: #25D366;
       padding: 8px 20px;
       border-radius: 60px;
       display: flex;
       align-items: center;
       gap: 10px;
       font-weight: 500;
-      color: #003c8f;
-      border: 1px solid #bdd4ff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .atendimento-badge i {
+      color: white;
     }
 
     .welcome-card {
@@ -153,7 +158,7 @@
     .action-btn:hover {
       transform: translateY(-5px);
       box-shadow: 0 20px 30px -12px rgba(0, 60, 143, 0.25);
-      border-color: #6ea8fe;
+      border-color: #25D366;
       background: #fbfeff;
     }
 
@@ -171,7 +176,7 @@
     }
 
     .action-btn:hover .btn-icon {
-      background: #0059b3;
+      background: #25D366;
       color: white;
     }
 
@@ -299,118 +304,35 @@
       line-height: 1.4;
     }
 
-    /* modal */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 32, 64, 0.7);
-      backdrop-filter: blur(4px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      visibility: hidden;
-      opacity: 0;
-      transition: all 0.2s ease;
-    }
-
-    .modal-overlay.active {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    .modal-card {
-      background: white;
-      max-width: 440px;
-      width: 90%;
-      border-radius: 40px;
-      padding: 2rem 1.8rem;
-      text-align: center;
-      box-shadow: 0 40px 50px rgba(0, 0, 0, 0.2);
-      transform: scale(0.95);
-      transition: transform 0.2s;
-    }
-
-    .modal-overlay.active .modal-card {
-      transform: scale(1);
-    }
-
-    .modal-card i {
-      font-size: 3.5rem;
-      color: #0066b3;
-      background: #eaf3ff;
-      padding: 12px;
-      border-radius: 60px;
-      margin-bottom: 16px;
-    }
-
-    .modal-card h3 {
-      font-size: 1.7rem;
-      margin: 12px 0 8px;
-      color: #00284d;
-    }
-
-    .modal-card p {
-      color: #3d5f7f;
-      margin: 10px 0 20px;
-    }
-
-    .modal-buttons {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      margin-top: 8px;
-    }
-
-    .btn-modal {
-      padding: 10px 24px;
-      border-radius: 40px;
-      border: none;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .btn-confirm {
-      background: #0059b3;
-      color: white;
-    }
-
-    .btn-confirm:hover {
-      background: #003c8f;
-    }
-
-    .btn-cancel {
-      background: #edf2f7;
-      color: #1f4a76;
-    }
-
-    .toast-message {
+    /* botão fixo do WhatsApp */
+    .whatsapp-float {
       position: fixed;
       bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%) scale(0.9);
-      background: #002d55;
+      right: 30px;
+      background-color: #25D366;
       color: white;
-      padding: 12px 28px;
       border-radius: 60px;
-      font-weight: 500;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      z-index: 1100;
-      opacity: 0;
-      transition: opacity 0.2s, transform 0.2s;
-      pointer-events: none;
-      white-space: nowrap;
-      backdrop-filter: blur(4px);
-      background: #003366e6;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 100;
+      font-weight: 600;
+      border: none;
+      font-size: 1rem;
     }
 
-    .toast-message.show {
-      opacity: 1;
-      transform: translateX(-50%) scale(1);
+    .whatsapp-float:hover {
+      transform: scale(1.05);
+      background-color: #20b859;
+      box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
+    }
+
+    .whatsapp-float i {
+      font-size: 1.8rem;
     }
 
     footer {
@@ -427,7 +349,8 @@
       .action-btn h3 { font-size: 1.2rem; }
       .main-header { flex-direction: column; gap: 12px; text-align: center; }
       .welcome-text h2 { font-size: 1.3rem; }
-      .toast-message { white-space: normal; text-align: center; width: 90%; }
+      .whatsapp-float { padding: 12px 18px; bottom: 20px; right: 20px; font-size: 0.85rem; }
+      .whatsapp-float i { font-size: 1.4rem; }
       .vantagens-header h3 { font-size: 1.2rem; }
       .vantagem-item { flex-direction: column; align-items: center; text-align: center; }
     }
@@ -448,8 +371,8 @@
       </div>
     </div>
     <div class="atendimento-badge">
-      <i class="fas fa-headset"></i>
-      <span>Central de Serviços</span>
+      <i class="fab fa-whatsapp"></i>
+      <span>Atendimento via WhatsApp</span>
     </div>
   </div>
 
@@ -457,10 +380,10 @@
   <div class="welcome-card">
     <div class="welcome-text">
       <h2>Olá, cliente!</h2>
-      <p>Gerencie seu contrato com agilidade e segurança. Escolha uma opção abaixo.</p>
+      <p>Gerencie seu contrato com agilidade e segurança. Escolha uma opção abaixo e fale conosco pelo WhatsApp.</p>
     </div>
     <div class="help-icon">
-      <i class="fas fa-shield-alt"></i> Ambiente 100% seguro
+      <i class="fab fa-whatsapp"></i> Atendimento via WhatsApp
     </div>
   </div>
 
@@ -546,134 +469,74 @@
   </div>
 
   <footer>
-    <i class="fas fa-lock"></i> Ambiente seguro e criptografado · Portal de Atendimento
+    <i class="fab fa-whatsapp"></i> Atendimento via WhatsApp · <i class="fas fa-lock"></i> Ambiente seguro e criptografado
   </footer>
 </div>
 
-<!-- Modal de confirmação -->
-<div id="actionModal" class="modal-overlay">
-  <div class="modal-card">
-    <i id="modalIcon" class="fas fa-question-circle"></i>
-    <h3 id="modalTitle">Confirmação</h3>
-    <p id="modalMessage">Deseja prosseguir com esta operação?</p>
-    <div class="modal-buttons">
-      <button class="btn-modal btn-cancel" id="modalCancelBtn">Cancelar</button>
-      <button class="btn-modal btn-confirm" id="modalConfirmBtn">Confirmar</button>
-    </div>
-  </div>
+<!-- Botão flutuante do WhatsApp -->
+<div class="whatsapp-float" id="whatsappFloatBtn">
+  <i class="fab fa-whatsapp"></i>
+  <span>Fale conosco</span>
 </div>
 
-<div id="toastMsg" class="toast-message">✅ Ação simulada com sucesso</div>
-
 <script>
-  const actionsMap = {
+  // Número do WhatsApp no formato internacional (sem espaços, apenas números)
+  const whatsappNumber = "553221201403"; // (32) 21201403 -> 55 + 32 + 21201403
+  
+  // Função para abrir WhatsApp com mensagem personalizada
+  function openWhatsApp(message) {
+    const encodedMessage = encodeURIComponent(message);
+    const url = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    window.open(url, '_blank');
+  }
+  
+  // Mapeamento das ações para mensagens personalizadas
+  const actionMessages = {
     quit: {
-      title: "💸 Quitar Contrato",
-      message: "Você está prestes a solicitar a quitação total do seu contrato. Deseja simular o valor de liquidação?",
-      successMsg: "✅ Solicitação de quitação de contrato encaminhada! Em breve um especialista entrará em contato.",
-      iconClass: "fas fa-hand-holding-usd"
+      message: "Olá! Gostaria de solicitar a QUITAÇÃO do meu contrato. Poderia me ajudar com as condições e valores?"
     },
     antecipar: {
-      title: "📅 Antecipar Parcelas",
-      message: "Antecipar parcelas gera desconto proporcional de juros. Deseja consultar as condições atuais?",
-      successMsg: "✅ Simulação de antecipação solicitada! Acesse seu e-mail para detalhes das parcelas com desconto.",
-      iconClass: "fas fa-calendar-check"
+      message: "Olá! Tenho interesse em ANTECIPAR parcelas do meu contrato. Gostaria de saber os descontos e condições."
     },
     "segunda-via": {
-      title: "📄 2ª Via de Boleto",
-      message: "Deseja gerar a segunda via do boleto referente ao seu contrato?",
-      successMsg: "✅ Boleto da 2ª via gerado! Enviamos para seu e-mail cadastrado (simulação).",
-      iconClass: "fas fa-receipt"
+      message: "Olá! Preciso da 2ª VIA do boleto/fatura do meu contrato. Podem me enviar?"
     },
     regularizar: {
-      title: "⚠️ Regularizar Parcelas em Atraso",
-      message: "Identificamos parcelas vencidas. Deseja renegociar seus débitos em condições especiais?",
-      successMsg: "✅ Parcelas em atraso em negociação! Um especialista retornará em até 1 hora útil.",
-      iconClass: "fas fa-clock"
+      message: "Olá! Estou com parcelas em ATRASO e gostaria de REGULARIZAR minha situação. Podem me ajudar com uma negociação?"
     }
   };
-
-  const modal = document.getElementById('actionModal');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalMessage = document.getElementById('modalMessage');
-  const modalIcon = document.getElementById('modalIcon');
-  const modalConfirmBtn = document.getElementById('modalConfirmBtn');
-  const modalCancelBtn = document.getElementById('modalCancelBtn');
-  const toast = document.getElementById('toastMsg');
-
-  let currentAction = null;
-
-  function showToast(message, duration = 3000) {
-    toast.textContent = message;
-    toast.classList.add('show');
-    setTimeout(() => {
-      toast.classList.remove('show');
-    }, duration);
-  }
-
-  function closeModal() {
-    modal.classList.remove('active');
-    currentAction = null;
-  }
-
-  function openModal(actionKey) {
-    const actionData = actionsMap[actionKey];
-    if (!actionData) return;
-    modalTitle.innerText = actionData.title;
-    modalMessage.innerText = actionData.message;
-    modalIcon.className = actionData.iconClass;
-    currentAction = actionKey;
-    modal.classList.add('active');
-  }
-
-  function executeConfirmedAction() {
-    if (!currentAction) return;
-    const actionData = actionsMap[currentAction];
-    if (actionData) {
-      showToast(actionData.successMsg);
-      // pequenas simulações visuais no resumo do contrato
-      if (currentAction === 'regularizar') {
-        const atrasoItem = document.querySelector('.simulated-list li:last-child');
-        if (atrasoItem && atrasoItem.innerHTML.includes('Parcelas em atraso')) {
-          atrasoItem.innerHTML = `<i class="fas fa-check-circle"></i> Parcelas em atraso: <strong style="color:#1f9a4e;">EM NEGOCIAÇÃO</strong> (encaminhado)`;
-        }
-      }
-      if (currentAction === 'quit') {
-        const saldoItem = document.querySelector('.simulated-list li:nth-child(2)');
-        if (saldoItem && saldoItem.innerHTML.includes('Saldo devedor')) {
-          saldoItem.innerHTML = `<i class="fas fa-dollar-sign"></i> Saldo devedor: <strong>Processando quitação...</strong> (aguarde contato)`;
-        }
-        // Destaque adicional para a seção de vantagens ao clicar em quitar
-        const vantagensSection = document.querySelector('.vantagens-section');
-        if (vantagensSection) {
-          vantagensSection.style.transition = '0.3s';
-          vantagensSection.style.boxShadow = '0 0 0 3px #0066b3, 0 8px 25px rgba(0,102,179,0.2)';
-          setTimeout(() => {
-            vantagensSection.style.boxShadow = '';
-          }, 1000);
-        }
-      }
-      if (currentAction === 'antecipar') {
-        showToast("✅ Simulação de antecipação disponível! Desconto de até 12% em parcelas futuras.", 3500);
-      }
-      if (currentAction === 'segunda-via') {
-        showToast("📎 2ª via enviada para o e-mail cadastrado: cliente@exemplo.com (simulação)", 4000);
-      }
-    }
-    closeModal();
-  }
-
+  
+  // Adiciona evento de clique a todos os botões de ação
   document.querySelectorAll('.action-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
       const action = btn.getAttribute('data-action');
-      if (action && actionsMap[action]) openModal(action);
-      else showToast("Funcionalidade em desenvolvimento, em breve mais opções.");
+      
+      if (action && actionMessages[action]) {
+        // Abre WhatsApp com a mensagem específica da ação
+        openWhatsApp(actionMessages[action].message);
+      } else {
+        // Mensagem padrão caso não tenha mapeamento
+        openWhatsApp("Olá! Gostaria de mais informações sobre os serviços do Portal de Atendimento.");
+      }
     });
   });
-
-  modalConfirmBtn.addEventListener('click', executeConfirmedAction);
-  modalCancelBtn.addEventListener('click', closeModal);
-  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  
+  // Botão flutuante do WhatsApp
+  const whatsappFloat = document.getElementById('whatsappFloatBtn');
+  if (whatsappFloat) {
+    whatsappFloat.addEventListener('click', () => {
+      openWhatsApp("Olá! Gostaria de atendimento sobre os serviços financeiros.");
+    });
+  }
+  
+  // Também adiciona clique ao badge do cabeçalho
+  const headerBadge = document.querySelector('.atendimento-badge');
+  if (headerBadge) {
+    headerBadge.addEventListener('click', () => {
+      openWhatsApp("Olá! Gostaria de atendimento.");
+    });
+  }
 </script>
 </body>
 </html>
