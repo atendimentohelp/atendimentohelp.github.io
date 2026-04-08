@@ -480,8 +480,9 @@
 </div>
 
 <script>
-  // Número do WhatsApp alterado para: 11 98015-1586
-  const whatsappNumber = "5511980151586";
+  // NÚMERO ATUALIZADO: WhatsApp no formato internacional (Brasil: 55 + DDD + número)
+  // Número solicitado: 11921474407 -> DDD 11, número 921474407
+  const whatsappNumber = "5511921474407"; // Código 55 + 11 + 921474407
   
   // Função para abrir WhatsApp com mensagem personalizada
   function openWhatsApp(message) {
@@ -490,7 +491,7 @@
     window.open(url, '_blank');
   }
   
-  // Mapeamento das ações para mensagens personalizadas
+  // Mapeamento das ações para mensagens personalizadas (conteúdo comercial e claro)
   const actionMessages = {
     quit: {
       message: "Olá! Gostaria de solicitar a QUITAÇÃO do meu contrato. Poderia me ajudar com as condições e valores?"
@@ -506,7 +507,7 @@
     }
   };
   
-  // Adiciona evento de clique a todos os botões de ação
+  // Adiciona evento de clique a todos os botões de ação (cards principais)
   document.querySelectorAll('.action-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -516,13 +517,13 @@
         // Abre WhatsApp com a mensagem específica da ação
         openWhatsApp(actionMessages[action].message);
       } else {
-        // Mensagem padrão caso não tenha mapeamento
+        // Mensagem padrão caso não tenha mapeamento (segurança)
         openWhatsApp("Olá! Gostaria de mais informações sobre os serviços do Portal de Atendimento.");
       }
     });
   });
   
-  // Botão flutuante do WhatsApp
+  // Botão flutuante do WhatsApp (rodapé flutuante)
   const whatsappFloat = document.getElementById('whatsappFloatBtn');
   if (whatsappFloat) {
     whatsappFloat.addEventListener('click', () => {
@@ -530,11 +531,19 @@
     });
   }
   
-  // Também adiciona clique ao badge do cabeçalho
+  // Também adiciona clique ao badge do cabeçalho (botão "Atendimento via WhatsApp")
   const headerBadge = document.querySelector('.atendimento-badge');
   if (headerBadge) {
     headerBadge.addEventListener('click', () => {
-      openWhatsApp("Olá! Gostaria de atendimento.");
+      openWhatsApp("Olá! Gostaria de atendimento no Portal de Soluções Financeiras.");
+    });
+  }
+
+  // EXTRA: Adiciona também o clique no ícone de ajuda do welcome-card (caso o usuário queira)
+  const helpIconDiv = document.querySelector('.help-icon');
+  if (helpIconDiv) {
+    helpIconDiv.addEventListener('click', () => {
+      openWhatsApp("Olá! Vi no portal que posso falar pelo WhatsApp. Gostaria de suporte.");
     });
   }
 </script>
