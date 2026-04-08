@@ -1,683 +1,679 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Maximiza | Agência de Marketing Digital e Criação de Sites</title>
-    <!-- Google Fonts + Font Awesome -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Portal de Atendimento | Soluções Financeiras</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
-            color: #1A1A2E;
-            line-height: 1.5;
-            scroll-behavior: smooth;
-        }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(145deg, #eef2ff 0%, #e0e7f7 100%);
+      color: #001a3b;
+      line-height: 1.4;
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+    }
 
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
+    .portal-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
 
-        /* tipografia */
-        h1, h2, h3 {
-            font-weight: 800;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-        }
+    /* cabeçalho */
+    .main-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      background: white;
+      padding: 1rem 2rem;
+      border-radius: 32px;
+      box-shadow: 0 8px 20px rgba(0, 32, 64, 0.08);
+      border: 1px solid rgba(0, 94, 157, 0.15);
+    }
 
-        h1 {
-            font-size: 3.5rem;
-            background: linear-gradient(135deg, #1A1A2E 0%, #2D2F5E 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-        h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            color: #0A0A1A;
-        }
+    .logo-icon {
+      background: #003c8f;
+      width: 48px;
+      height: 48px;
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0,60,143,0.2);
+    }
 
-        .section {
-            padding: 80px 0;
-        }
+    .logo-icon i {
+      font-size: 28px;
+      color: white;
+    }
 
-        .section-gray {
-            background-color: #F8FAFE;
-        }
+    .logo-text h1 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      background: linear-gradient(135deg, #003c8f 0%, #0066b3 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
 
-        /* botões */
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #FF6B2C;
-            color: white;
-            font-weight: 700;
-            padding: 14px 32px;
-            border-radius: 40px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: none;
-            font-size: 1rem;
-            box-shadow: 0 8px 20px rgba(255, 107, 44, 0.25);
-        }
+    .logo-text span {
+      font-size: 0.8rem;
+      color: #1e5a8a;
+      font-weight: 500;
+      display: block;
+    }
 
-        .btn-primary:hover {
-            background: #E55A1F;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(255, 107, 44, 0.35);
-        }
+    .atendimento-badge {
+      background: #eef3ff;
+      padding: 8px 20px;
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 500;
+      color: #003c8f;
+      border: 1px solid #bdd4ff;
+    }
 
-        .btn-outline {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: transparent;
-            border: 2px solid #FF6B2C;
-            color: #FF6B2C;
-            font-weight: 700;
-            padding: 12px 28px;
-            border-radius: 40px;
-            text-decoration: none;
-            transition: 0.2s;
-        }
+    .welcome-card {
+      background: white;
+      border-radius: 32px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+      border-left: 6px solid #0066b3;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .btn-outline:hover {
-            background: #FF6B2C;
-            color: white;
-        }
+    .welcome-text h2 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #00264d;
+    }
 
-        /* header */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 24px 0;
-            flex-wrap: wrap;
-        }
+    .welcome-text p {
+      color: #2c5a7a;
+      margin-top: 6px;
+    }
 
-        .logo h2 {
-            font-size: 1.8rem;
-            margin-bottom: 0;
-            color: #FF6B2C;
-        }
+    .help-icon {
+      background: #eef2ff;
+      border-radius: 60px;
+      padding: 8px 18px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #005a9c;
+    }
 
-        .logo p {
-            font-size: 0.75rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-            color: #5A5A72;
-        }
+    /* grid dos botões */
+    .actions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 3rem;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-        }
+    .action-btn {
+      background: white;
+      border-radius: 28px;
+      padding: 1.6rem 0.8rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.04);
+      border: 1px solid #dce5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
 
-        .nav-links a {
-            text-decoration: none;
-            font-weight: 600;
-            color: #1A1A2E;
-            transition: 0.2s;
-        }
+    .action-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 30px -12px rgba(0, 60, 143, 0.25);
+      border-color: #6ea8fe;
+      background: #fbfeff;
+    }
 
-        .nav-links a:hover {
-            color: #FF6B2C;
-        }
+    .btn-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(145deg, #eef2ff, #e3eafc);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      color: #0059b3;
+      transition: 0.2s;
+    }
 
-        /* hero */
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-            flex-wrap: wrap;
-            padding: 20px 0 40px;
-        }
+    .action-btn:hover .btn-icon {
+      background: #0059b3;
+      color: white;
+    }
 
-        .hero-content {
-            flex: 1;
-        }
+    .action-btn h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #002d62;
+    }
 
-        .hero-badge {
-            background: #FFE6DC;
-            color: #FF6B2C;
-            padding: 6px 16px;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 24px;
-        }
+    .action-btn p {
+      font-size: 0.85rem;
+      color: #3e6b8c;
+      max-width: 180px;
+      margin: 0 auto;
+    }
 
-        .hero-content p {
-            font-size: 1.2rem;
-            color: #4A4A64;
-            margin: 24px 0;
-            max-width: 90%;
-        }
+    /* card de resumo do contrato */
+    .status-card {
+      background: white;
+      border-radius: 28px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+      border: 1px solid #e2edff;
+      width: 100%;
+    }
 
-        .hero-stats {
-            display: flex;
-            gap: 32px;
-            margin-top: 32px;
-        }
+    .status-card h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #003c8f;
+      border-left: 4px solid #0066b3;
+      padding-left: 12px;
+    }
 
-        .stat-item h3 {
-            font-size: 1.8rem;
-            color: #FF6B2C;
-            margin-bottom: 4px;
-        }
+    .simulated-list {
+      list-style: none;
+    }
 
-        .hero-image {
-            flex: 1;
-            background: linear-gradient(145deg, #FFE6DC, #FFF0E8);
-            border-radius: 40px;
-            padding: 30px;
-            text-align: center;
-        }
+    .simulated-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #ecf3fa;
+      color: #1f4662;
+    }
 
-        .hero-image i {
-            font-size: 12rem;
-            color: #FF6B2C;
-            opacity: 0.9;
-        }
+    .simulated-list i {
+      width: 28px;
+      color: #0070c0;
+    }
 
-        /* serviços */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-            margin-top: 48px;
-        }
+    /* nova seção de vantagens - quitar contrato antecipadamente */
+    .vantagens-section {
+      background: linear-gradient(135deg, #ffffff 0%, #f0f6ff 100%);
+      border-radius: 28px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2rem;
+      border: 1px solid #cde0fe;
+      box-shadow: 0 8px 20px rgba(0, 60, 143, 0.08);
+    }
 
-        .service-card {
-            background: white;
-            border-radius: 28px;
-            padding: 32px 24px;
-            transition: 0.25s ease;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.04);
-            border: 1px solid #EEF2F6;
-        }
+    .vantagens-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1.5rem;
+    }
 
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
-            border-color: #FFE0D0;
-        }
+    .vantagens-header i {
+      font-size: 2rem;
+      color: #0066b3;
+      background: #e3efff;
+      padding: 12px;
+      border-radius: 60px;
+    }
 
-        .service-icon {
-            background: #FFF0E8;
-            width: 64px;
-            height: 64px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-        }
+    .vantagens-header h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #002d62;
+    }
 
-        .service-icon i {
-            font-size: 2rem;
-            color: #FF6B2C;
-        }
+    .vantagens-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
 
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 12px;
-        }
+    .vantagem-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 0.5rem;
+    }
 
-        /* sobre / sobreposição de dados CNPJ */
-        .about-grid {
-            display: flex;
-            gap: 48px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
+    .vantagem-icon {
+      background: #eef3ff;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
 
-        .about-text {
-            flex: 1;
-        }
+    .vantagem-icon i {
+      font-size: 1.5rem;
+      color: #0059b3;
+    }
 
-        .about-info {
-            flex: 1;
-            background: white;
-            border-radius: 28px;
-            padding: 32px;
-            box-shadow: 0 20px 35px -8px rgba(0,0,0,0.05);
-            border: 1px solid #eef2fa;
-        }
+    .vantagem-text h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #003c8f;
+      margin-bottom: 6px;
+    }
 
-        .info-row {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 24px;
-            flex-wrap: wrap;
-        }
+    .vantagem-text p {
+      font-size: 0.9rem;
+      color: #3a6382;
+      line-height: 1.4;
+    }
 
-        .info-row i {
-            width: 32px;
-            color: #FF6B2C;
-            font-size: 1.3rem;
-        }
+    /* modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 32, 64, 0.7);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.2s ease;
+    }
 
-        .badge-cnpj {
-            background: #E9F0FF;
-            color: #1A4CFF;
-            padding: 6px 12px;
-            border-radius: 40px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            display: inline-block;
-        }
+    .modal-overlay.active {
+      visibility: visible;
+      opacity: 1;
+    }
 
-        /* cases (inspirado em resultados reais) */
-        .cases-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 48px;
-        }
+    .modal-card {
+      background: white;
+      max-width: 440px;
+      width: 90%;
+      border-radius: 40px;
+      padding: 2rem 1.8rem;
+      text-align: center;
+      box-shadow: 0 40px 50px rgba(0, 0, 0, 0.2);
+      transform: scale(0.95);
+      transition: transform 0.2s;
+    }
 
-        .case-card {
-            background: white;
-            border-radius: 28px;
-            overflow: hidden;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
-            transition: all 0.2s;
-        }
+    .modal-overlay.active .modal-card {
+      transform: scale(1);
+    }
 
-        .case-header {
-            background: #1A1A2E;
-            padding: 24px;
-            color: white;
-        }
+    .modal-card i {
+      font-size: 3.5rem;
+      color: #0066b3;
+      background: #eaf3ff;
+      padding: 12px;
+      border-radius: 60px;
+      margin-bottom: 16px;
+    }
 
-        .case-header i {
-            font-size: 2.5rem;
-            margin-bottom: 12px;
-            color: #FF6B2C;
-        }
+    .modal-card h3 {
+      font-size: 1.7rem;
+      margin: 12px 0 8px;
+      color: #00284d;
+    }
 
-        .case-header h3 {
-            color: white;
-            font-size: 1.5rem;
-        }
+    .modal-card p {
+      color: #3d5f7f;
+      margin: 10px 0 20px;
+    }
 
-        .case-body {
-            padding: 24px;
-        }
+    .modal-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 8px;
+    }
 
-        .result-metric {
-            font-weight: 800;
-            font-size: 1.8rem;
-            color: #FF6B2C;
-            margin: 16px 0 8px;
-        }
+    .btn-modal {
+      padding: 10px 24px;
+      border-radius: 40px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
 
-        /* contato e mapa */
-        .contact-flex {
-            display: flex;
-            gap: 48px;
-            flex-wrap: wrap;
-        }
+    .btn-confirm {
+      background: #0059b3;
+      color: white;
+    }
 
-        .contact-details {
-            flex: 1;
-        }
+    .btn-confirm:hover {
+      background: #003c8f;
+    }
 
-        .contact-card {
-            background: white;
-            border-radius: 28px;
-            padding: 28px;
-            margin-bottom: 24px;
-            box-shadow: 0 8px 22px rgba(0,0,0,0.05);
-        }
+    .btn-cancel {
+      background: #edf2f7;
+      color: #1f4a76;
+    }
 
-        .contact-card i {
-            color: #FF6B2C;
-            font-size: 1.6rem;
-            margin-right: 16px;
-            width: 40px;
-        }
+    .toast-message {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.9);
+      background: #002d55;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 60px;
+      font-weight: 500;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      z-index: 1100;
+      opacity: 0;
+      transition: opacity 0.2s, transform 0.2s;
+      pointer-events: none;
+      white-space: nowrap;
+      backdrop-filter: blur(4px);
+      background: #003366e6;
+    }
 
-        .map-placeholder {
-            flex: 1;
-            background: #EFF3F8;
-            border-radius: 28px;
-            padding: 32px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid #e2e8f0;
-        }
+    .toast-message.show {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
 
-        .map-placeholder i {
-            font-size: 4rem;
-            color: #FF6B2C;
-            margin-bottom: 20px;
-        }
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #2e5f88;
+      border-top: 1px solid #cddeff;
+      padding-top: 1.8rem;
+    }
 
-        footer {
-            background: #0A0A1A;
-            color: #B0B0C8;
-            padding: 48px 0 24px;
-            margin-top: 40px;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 32px;
-            margin-bottom: 40px;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 32px;
-            border-top: 1px solid #22223b;
-            font-size: 0.85rem;
-        }
-
-        @media (max-width: 850px) {
-            .container {
-                padding: 0 24px;
-            }
-            h1 {
-                font-size: 2.5rem;
-            }
-            h2 {
-                font-size: 1.8rem;
-            }
-            .navbar {
-                flex-direction: column;
-                gap: 16px;
-            }
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 20px;
-            }
-            .hero-content p {
-                max-width: 100%;
-            }
-        }
-    </style>
+    @media (max-width: 700px) {
+      body { padding: 1rem; }
+      .action-btn h3 { font-size: 1.2rem; }
+      .main-header { flex-direction: column; gap: 12px; text-align: center; }
+      .welcome-text h2 { font-size: 1.3rem; }
+      .toast-message { white-space: normal; text-align: center; width: 90%; }
+      .vantagens-header h3 { font-size: 1.2rem; }
+      .vantagem-item { flex-direction: column; align-items: center; text-align: center; }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <div class="navbar">
-            <div class="logo">
-                <h2>MAXIMIZA</h2>
-                <p>AGÊNCIA DE MARKETING DIGITAL & SITES</p>
-            </div>
-            <div class="nav-links">
-                <a href="#home">Início</a>
-                <a href="#servicos">Serviços</a>
-                <a href="#sobre">Sobre</a>
-                <a href="#cases">Cases</a>
-                <a href="#contato">Contato</a>
-            </div>
-        </div>
+<div class="portal-container">
+  <!-- cabeçalho -->
+  <div class="main-header">
+    <div class="logo-area">
+      <div class="logo-icon">
+        <i class="fas fa-hand-holding-usd"></i>
+      </div>
+      <div class="logo-text">
+        <h1>Portal Atendimento</h1>
+        <span>soluções financeiras inteligentes</span>
+      </div>
     </div>
-</header>
-
-<main>
-    <!-- Hero Section -->
-    <section id="home">
-        <div class="container">
-            <div class="hero">
-                <div class="hero-content">
-                    <span class="hero-badge"><i class="fas fa-chart-line"></i> Tráfego pago & Criação de Sites</span>
-                    <h1>Resultados que <br> fazem seu negócio <span style="color:#FF6B2C;">decolar</span></h1>
-                    <p>Estratégias personalizadas, sites profissionais e dados em tempo real. Somos a Maximiza, sua parceira para crescimento digital escalável.</p>
-                    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-                        <a href="#contato" class="btn-primary"><i class="fas fa-rocket"></i> Fale com um especialista</a>
-                        <a href="#servicos" class="btn-outline"><i class="fas fa-chart-simple"></i> Conheça os serviços</a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat-item"><h3>+48%</h3><p>mais leads gerados</p></div>
-                        <div class="stat-item"><h3>-40%</h3><p>CPL médio</p></div>
-                        <div class="stat-item"><h3>+146%</h3><p>conversões em mídia</p></div>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <i class="fas fa-chart-line"></i>
-                    <i class="fas fa-code" style="font-size: 5rem; margin-left: 10px;"></i>
-                    <p style="margin-top: 20px; font-weight: 600;">Maximiza · Performance + Criação de Sites</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Serviços (incluindo Criação de Sites) -->
-    <section id="servicos" class="section-gray">
-        <div class="container">
-            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
-                <span class="hero-badge" style="background:#E9ECFF; color:#1A4CFF;">O que oferecemos</span>
-                <h2>Estratégias omnichannel + Sites que vendem</h2>
-                <p>Da captação ao pós-venda, combinamos tecnologia e inteligência para maximizar cada etapa do funil. Além disso, criamos sites modernos, rápidos e otimizados para conversão.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>Tráfego Pago & IA</h3>
-                    <p>Google Ads, Meta Ads (Facebook/Instagram) e TikTok com otimização baseada em machine learning e redução de CAC.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fab fa-whatsapp"></i></div>
-                    <h3>WhatsApp & CRM</h3>
-                    <p>Automação de conversas, fluxos de nutrição e estratégias de retargeting no canal preferido do seu cliente.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-code"></i></div>
-                    <h3>Criação de Sites</h3>
-                    <p>Desenvolvemos sites institucionais, e-commerces, landing pages e hotsites 100% responsivos, otimizados para SEO e prontos para converter visitantes em clientes.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-envelope-open-text"></i></div>
-                    <h3>Email Marketing & Automação</h3>
-                    <p>Campanhas segmentadas com taxas de abertura até 80% maiores e fluxos de carrinho abandonado de alta conversão.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-database"></i></div>
-                    <h3>CDP & Personalização</h3>
-                    <p>Unificamos dados de clientes, criamos jornadas cross-channel e entregamos experiências 1:1 em escala.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>Manutenção & Suporte</h3>
-                    <p>Garantimos que seu site esteja sempre atualizado, seguro e com performance máxima. Suporte técnico ágil e dedicado.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sobre / CNPJ e dados reais -->
-    <section id="sobre">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-text">
-                    <span class="hero-badge" style="background:#FFE6DC;">Quem somos</span>
-                    <h2>Agência Maximiza <br> <span style="color:#FF6B2C;">Tráfego Pago + Sites</span></h2>
-                    <p style="margin: 20px 0; font-size: 1.05rem;">Somos especialistas em marketing de performance e criação de sites, instalados em Belo Horizonte - MG, atendendo negócios de todo o Brasil. Combinamos dados, criatividade e tecnologia para fazer sua empresa crescer de forma sustentável.</p>
-                    <p><i class="fas fa-check-circle" style="color:#FF6B2C;"></i> CNPJ ativo desde 2023 · Sociedade Empresária Limitada</p>
-                    <p><i class="fas fa-check-circle" style="color:#FF6B2C;"></i> Porte ME — agilidade e proximidade com o cliente.</p>
-                    <p><i class="fas fa-check-circle" style="color:#FF6B2C;"></i> Especialistas em Meta Advantage+, Google AI, criação de sites e WhatsApp Business.</p>
-                </div>
-                <div class="about-info">
-                    <h3 style="margin-bottom: 24px;"><i class="fas fa-building"></i> Dados da empresa</h3>
-                    <div class="info-row"><i class="fas fa-id-card"></i> <span><strong>Razão Social:</strong> Agencia De Marketing Digital Maximiza Ltda</span></div>
-                    <div class="info-row"><i class="fas fa-tag"></i> <span><strong>Nome Fantasia:</strong> Agencia Maximiza - Trafego Pago e Criação de Sites</span></div>
-                    <div class="info-row"><i class="fas fa-qrcode"></i> <span><strong>CNPJ:</strong> 49.446.270/0001-10</span> <span class="badge-cnpj">ATIVA</span></div>
-                    <div class="info-row"><i class="fas fa-map-marker-alt"></i> <span><strong>Endereço:</strong> Rua Grupiara, 23 - Bonfim, Belo Horizonte/MG - CEP: 31.210-410</span></div>
-                    <div class="info-row"><i class="fas fa-phone-alt"></i> <span><strong>Telefone / WhatsApp:</strong> (11) 92147-4407</span></div>
-                    <div class="info-row"><i class="fas fa-envelope"></i> <span><strong>E-mail:</strong> contato@maximiza.agência</span></div>
-                    <div class="info-row"><i class="fas fa-chart-pie"></i> <span><strong>CNAE Principal:</strong> 7311-4/00 - Agências de publicidade</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cases com inspiração em resultados reais de mercado -->
-    <section id="cases" class="section-gray">
-        <div class="container">
-            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
-                <span class="hero-badge">Resultados reais</span>
-                <h2>Cases que mostram a força Maximiza</h2>
-                <p>Estratégias aplicadas para clientes de diversos setores: varejo, finanças, educação, serviços e comércio eletrônico.</p>
-            </div>
-            <div class="cases-grid">
-                <div class="case-card">
-                    <div class="case-header">
-                        <i class="fas fa-store"></i>
-                        <h3>E-commerce Moda</h3>
-                    </div>
-                    <div class="case-body">
-                        <p>Aumento de conversão com recomendações personalizadas + WhatsApp integrado + novo site responsivo.</p>
-                        <div class="result-metric">+64%</div>
-                        <p>taxa de conversão com cross-sell inteligente</p>
-                        <hr style="margin: 16px 0;">
-                        <p><i class="fas fa-chart-line"></i> Redução de 25% no CPA e ROI 3.2x</p>
-                    </div>
-                </div>
-                <div class="case-card">
-                    <div class="case-header">
-                        <i class="fas fa-car"></i>
-                        <h3>Assistência veicular</h3>
-                    </div>
-                    <div class="case-body">
-                        <p>Captação via TikTok e WhatsApp sem formulários, aumentando velocidade de vendas + landing page de alta performance.</p>
-                        <div class="result-metric">-40% CPL</div>
-                        <p>Custo por lead 40% menor e crescimento de 48% no volume de leads.</p>
-                        <hr>
-                        <p><i class="fab fa-tiktok"></i> Estratégia full performance + site otimizado</p>
-                    </div>
-                </div>
-                <div class="case-card">
-                    <div class="case-header">
-                        <i class="fas fa-plane"></i>
-                        <h3>Agência de viagens</h3>
-                    </div>
-                    <div class="case-body">
-                        <p>Campanha Early Bird com segmentação por CDP e retargeting cross-channel, além de redesign completo do site.</p>
-                        <div class="result-metric">+40% ROAS</div>
-                        <p> aumento de receita com públicos modelados + redução de 60% no CPC médio.</p>
-                        <hr>
-                        <p><i class="fas fa-chart-line"></i> Mais de 13,5M de dispositivos impactados.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contato + Mapa endereço real com número atualizado -->
-    <section id="contato">
-        <div class="container">
-            <div style="text-align: center; margin-bottom: 48px;">
-                <span class="hero-badge">Entre em contato</span>
-                <h2>Vamos maximizar seus resultados?</h2>
-                <p>Fale com nosso time de especialistas e descubra uma estratégia feita sob medida para seu negócio. Criamos sites incríveis e gerenciamos campanhas de alto desempenho.</p>
-            </div>
-            <div class="contact-flex">
-                <div class="contact-details">
-                    <div class="contact-card">
-                        <div><i class="fas fa-map-pin"></i> <strong>Visite nossa sede</strong></div>
-                        <p style="margin-top: 8px;">Rua Grupiara, 23 - Bonfim, Belo Horizonte - MG, 31.210-410</p>
-                        <div style="margin-top: 16px;"><i class="fas fa-clock"></i> Atendimento: Segunda a Sexta, 9h às 18h</div>
-                    </div>
-                    <div class="contact-card">
-                        <div><i class="fas fa-phone-alt"></i> <strong>Ligue ou mande WhatsApp</strong></div>
-                        <p style="font-size: 1.5rem; font-weight: 700; margin: 12px 0;">(11) 92147-4407</p>
-                        <a href="https://wa.me/5511921474407?text=Olá%20Maximiza%2C%20quero%20impulsionar%20meus%20resultados%20e%20criar%20um%20site%20incrível" target="_blank" class="btn-primary" style="background:#25D366; box-shadow: none;"><i class="fab fa-whatsapp"></i> Chamar no WhatsApp</a>
-                    </div>
-                    <div class="contact-card">
-                        <div><i class="fas fa-envelope"></i> <strong>E-mail comercial</strong></div>
-                        <p>contato@maximiza.agência  |  atendimento@maximiza.com.br</p>
-                        <div class="badge-cnpj" style="margin-top: 12px; background:#EFF3F8;">Resposta em até 2h úteis</div>
-                    </div>
-                    <div class="contact-card">
-                        <div><i class="fas fa-globe"></i> <strong>Criação de Sites</strong></div>
-                        <p>Desenvolvemos sites institucionais, e-commerces e landing pages de alta conversão. Solicite um orçamento sem compromisso!</p>
-                        <div class="badge-cnpj" style="margin-top: 12px; background:#FFE6DC; color:#FF6B2C;"><i class="fas fa-code"></i> Sites que vendem e encantam</div>
-                    </div>
-                </div>
-                <div class="map-placeholder">
-                    <i class="fas fa-location-dot"></i>
-                    <h3>Maximiza na região do Bonfim</h3>
-                    <p>Rua Grupiara, 23, BH/MG</p>
-                    <div style="background: #E2E8F0; border-radius: 20px; padding: 16px; width: 100%; margin-top: 20px;">
-                        <i class="fas fa-map"></i> 📍 Próximo ao centro de Belo Horizonte
-                    </div>
-                    <small style="margin-top: 16px;">Venha conversar sobre marketing de performance, criação de sites, tráfego pago e muito mais.</small>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
-
-<footer>
-    <div class="container">
-        <div class="footer-content">
-            <div>
-                <h3 style="color:white;">MAXIMIZA</h3>
-                <p>Agência de Marketing Digital <br>CNPJ: 49.446.270/0001-10</p>
-                <p><i class="fas fa-code"></i> Criação de Sites Profissionais</p>
-            </div>
-            <div>
-                <strong style="color:white;">Mapa do site</strong>
-                <p><a href="#home" style="color:#B0B0C8; text-decoration:none;">Início</a></p>
-                <p><a href="#servicos" style="color:#B0B0C8; text-decoration:none;">Serviços</a></p>
-                <p><a href="#sobre" style="color:#B0B0C8; text-decoration:none;">Sobre</a></p>
-                <p><a href="#contato" style="color:#B0B0C8; text-decoration:none;">Contato</a></p>
-            </div>
-            <div>
-                <strong style="color:white;">Atendimento</strong>
-                <p><i class="fab fa-whatsapp"></i> (11) 92147-4407</p>
-                <p><i class="far fa-envelope"></i> contato@maximiza.agência</p>
-                <p><i class="fas fa-map-marker-alt"></i> Belo Horizonte - MG</p>
-            </div>
-        </div>
-        <div class="copyright">
-            © 2025 Maximiza Agência de Marketing Digital LTDA | Todos os direitos reservados | Dados públicos CNPJ conforme receita federal. | <strong><i class="fas fa-code"></i> Criamos sites que transformam visitantes em clientes</strong>
-        </div>
+    <div class="atendimento-badge">
+      <i class="fas fa-headset"></i>
+      <span>Central de Serviços</span>
     </div>
-</footer>
+  </div>
 
-<!-- linkagem suave -->
+  <!-- boas vindas -->
+  <div class="welcome-card">
+    <div class="welcome-text">
+      <h2>Olá, cliente!</h2>
+      <p>Gerencie seu contrato com agilidade e segurança. Escolha uma opção abaixo.</p>
+    </div>
+    <div class="help-icon">
+      <i class="fas fa-shield-alt"></i> Ambiente 100% seguro
+    </div>
+  </div>
+
+  <!-- grid dos 4 botões principais -->
+  <div class="actions-grid">
+    <div class="action-btn" data-action="quit">
+      <div class="btn-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+      <h3>QUITAR CONTRATO</h3>
+      <p>Liquide seu saldo devedor com condições especiais</p>
+    </div>
+    <div class="action-btn" data-action="antecipar">
+      <div class="btn-icon"><i class="fas fa-calendar-check"></i></div>
+      <h3>ANTECIPAR PARCELAS</h3>
+      <p>Pague parcelas futuras com desconto de juros</p>
+    </div>
+    <div class="action-btn" data-action="segunda-via">
+      <div class="btn-icon"><i class="fas fa-receipt"></i></div>
+      <h3>2VIA</h3>
+      <p>Obtenha segunda via do boleto / fatura</p>
+    </div>
+    <div class="action-btn" data-action="regularizar">
+      <div class="btn-icon"><i class="fas fa-clock"></i></div>
+      <h3>REGULARIZAR PARCELAS EM ATRASO</h3>
+      <p>Negocie débitos e renegocie seu contrato</p>
+    </div>
+  </div>
+
+  <!-- resumo do contrato -->
+  <div class="status-card">
+    <h4><i class="fas fa-chart-line"></i> Resumo do contrato (exemplo)</h4>
+    <ul class="simulated-list">
+      <li><i class="fas fa-id-card"></i> Contrato: <strong>FIN-9876-XPTO</strong> | Produto: Financiamento</li>
+      <li><i class="fas fa-dollar-sign"></i> Saldo devedor atual: <strong>R$ 8.742,50</strong></li>
+      <li><i class="fas fa-calendar-alt"></i> Próxima parcela: Vencimento 10/06/2026 - R$ 389,70</li>
+      <li><i class="fas fa-exclamation-triangle"></i> Parcelas em atraso: <strong style="color:#c7452c;">2</strong> (regularize já!)</li>
+    </ul>
+  </div>
+
+  <!-- SEÇÃO DE VANTAGENS: Quitar contrato antecipadamente -->
+  <div class="vantagens-section">
+    <div class="vantagens-header">
+      <i class="fas fa-chart-line"></i>
+      <h3>Vantagens de quitar seu contrato antecipadamente</h3>
+    </div>
+    <div class="vantagens-grid">
+      <div class="vantagem-item">
+        <div class="vantagem-icon">
+          <i class="fas fa-percent"></i>
+        </div>
+        <div class="vantagem-text">
+          <h4>Desconto em juros</h4>
+          <p>Ao quitar antes do prazo, você paga apenas os juros até a data da liquidação, com redução significativa do valor total.</p>
+        </div>
+      </div>
+      <div class="vantagem-item">
+        <div class="vantagem-icon">
+          <i class="fas fa-file-signature"></i>
+        </div>
+        <div class="vantagem-text">
+          <h4>Baixa da dívida</h4>
+          <p>Seu nome fica livre de qualquer pendência e o contrato é encerrado oficialmente, trazendo tranquilidade financeira.</p>
+        </div>
+      </div>
+      <div class="vantagem-item">
+        <div class="vantagem-icon">
+          <i class="fas fa-chart-simple"></i>
+        </div>
+        <div class="vantagem-text">
+          <h4>Liberação de limite</h4>
+          <p>Com o contrato quitado, você recupera sua capacidade de crédito e pode contratar novos produtos com melhores condições.</p>
+        </div>
+      </div>
+      <div class="vantagem-item">
+        <div class="vantagem-icon">
+          <i class="fas fa-hand-holding-heart"></i>
+        </div>
+        <div class="vantagem-text">
+          <h4>Planejamento financeiro</h4>
+          <p>Elimine parcelas futuras do seu orçamento mensal e tenha mais liberdade para investir em outros objetivos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <i class="fas fa-lock"></i> Ambiente seguro e criptografado · Portal de Atendimento
+  </footer>
+</div>
+
+<!-- Modal de confirmação -->
+<div id="actionModal" class="modal-overlay">
+  <div class="modal-card">
+    <i id="modalIcon" class="fas fa-question-circle"></i>
+    <h3 id="modalTitle">Confirmação</h3>
+    <p id="modalMessage">Deseja prosseguir com esta operação?</p>
+    <div class="modal-buttons">
+      <button class="btn-modal btn-cancel" id="modalCancelBtn">Cancelar</button>
+      <button class="btn-modal btn-confirm" id="modalConfirmBtn">Confirmar</button>
+    </div>
+  </div>
+</div>
+
+<div id="toastMsg" class="toast-message">✅ Ação simulada com sucesso</div>
+
 <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if(href === "#" || href === "") return;
-            const target = document.querySelector(href);
-            if(target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
+  const actionsMap = {
+    quit: {
+      title: "💸 Quitar Contrato",
+      message: "Você está prestes a solicitar a quitação total do seu contrato. Deseja simular o valor de liquidação?",
+      successMsg: "✅ Solicitação de quitação de contrato encaminhada! Em breve um especialista entrará em contato.",
+      iconClass: "fas fa-hand-holding-usd"
+    },
+    antecipar: {
+      title: "📅 Antecipar Parcelas",
+      message: "Antecipar parcelas gera desconto proporcional de juros. Deseja consultar as condições atuais?",
+      successMsg: "✅ Simulação de antecipação solicitada! Acesse seu e-mail para detalhes das parcelas com desconto.",
+      iconClass: "fas fa-calendar-check"
+    },
+    "segunda-via": {
+      title: "📄 2ª Via de Boleto",
+      message: "Deseja gerar a segunda via do boleto referente ao seu contrato?",
+      successMsg: "✅ Boleto da 2ª via gerado! Enviamos para seu e-mail cadastrado (simulação).",
+      iconClass: "fas fa-receipt"
+    },
+    regularizar: {
+      title: "⚠️ Regularizar Parcelas em Atraso",
+      message: "Identificamos parcelas vencidas. Deseja renegociar seus débitos em condições especiais?",
+      successMsg: "✅ Parcelas em atraso em negociação! Um especialista retornará em até 1 hora útil.",
+      iconClass: "fas fa-clock"
+    }
+  };
+
+  const modal = document.getElementById('actionModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalMessage = document.getElementById('modalMessage');
+  const modalIcon = document.getElementById('modalIcon');
+  const modalConfirmBtn = document.getElementById('modalConfirmBtn');
+  const modalCancelBtn = document.getElementById('modalCancelBtn');
+  const toast = document.getElementById('toastMsg');
+
+  let currentAction = null;
+
+  function showToast(message, duration = 3000) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, duration);
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    currentAction = null;
+  }
+
+  function openModal(actionKey) {
+    const actionData = actionsMap[actionKey];
+    if (!actionData) return;
+    modalTitle.innerText = actionData.title;
+    modalMessage.innerText = actionData.message;
+    modalIcon.className = actionData.iconClass;
+    currentAction = actionKey;
+    modal.classList.add('active');
+  }
+
+  function executeConfirmedAction() {
+    if (!currentAction) return;
+    const actionData = actionsMap[currentAction];
+    if (actionData) {
+      showToast(actionData.successMsg);
+      // pequenas simulações visuais no resumo do contrato
+      if (currentAction === 'regularizar') {
+        const atrasoItem = document.querySelector('.simulated-list li:last-child');
+        if (atrasoItem && atrasoItem.innerHTML.includes('Parcelas em atraso')) {
+          atrasoItem.innerHTML = `<i class="fas fa-check-circle"></i> Parcelas em atraso: <strong style="color:#1f9a4e;">EM NEGOCIAÇÃO</strong> (encaminhado)`;
+        }
+      }
+      if (currentAction === 'quit') {
+        const saldoItem = document.querySelector('.simulated-list li:nth-child(2)');
+        if (saldoItem && saldoItem.innerHTML.includes('Saldo devedor')) {
+          saldoItem.innerHTML = `<i class="fas fa-dollar-sign"></i> Saldo devedor: <strong>Processando quitação...</strong> (aguarde contato)`;
+        }
+        // Destaque adicional para a seção de vantagens ao clicar em quitar
+        const vantagensSection = document.querySelector('.vantagens-section');
+        if (vantagensSection) {
+          vantagensSection.style.transition = '0.3s';
+          vantagensSection.style.boxShadow = '0 0 0 3px #0066b3, 0 8px 25px rgba(0,102,179,0.2)';
+          setTimeout(() => {
+            vantagensSection.style.boxShadow = '';
+          }, 1000);
+        }
+      }
+      if (currentAction === 'antecipar') {
+        showToast("✅ Simulação de antecipação disponível! Desconto de até 12% em parcelas futuras.", 3500);
+      }
+      if (currentAction === 'segunda-via') {
+        showToast("📎 2ª via enviada para o e-mail cadastrado: cliente@exemplo.com (simulação)", 4000);
+      }
+    }
+    closeModal();
+  }
+
+  document.querySelectorAll('.action-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const action = btn.getAttribute('data-action');
+      if (action && actionsMap[action]) openModal(action);
+      else showToast("Funcionalidade em desenvolvimento, em breve mais opções.");
     });
+  });
+
+  modalConfirmBtn.addEventListener('click', executeConfirmedAction);
+  modalCancelBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
 </script>
 </body>
 </html>
