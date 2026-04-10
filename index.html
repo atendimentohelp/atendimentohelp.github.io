@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Portal de Atendimento | Soluções Financeiras</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <!-- Font Awesome 6 -->
+  <title>Central de Relacionamento</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -17,535 +15,519 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(145deg, #eef2ff 0%, #e0e7f7 100%);
-      color: #001a3b;
-      line-height: 1.4;
+      background: #0066B3;
       min-height: 100vh;
-      padding: 2rem 1.5rem;
     }
 
-    .portal-container {
-      max-width: 1280px;
+    .dashboard {
+      max-width: 1400px;
       margin: 0 auto;
+      padding: 2rem 2rem 2rem 2rem;
     }
 
-    /* cabeçalho */
-    .main-header {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2rem;
-      background: white;
-      padding: 1rem 2rem;
-      border-radius: 32px;
-      box-shadow: 0 8px 20px rgba(0, 32, 64, 0.08);
-      border: 1px solid rgba(0, 94, 157, 0.15);
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding: 1rem 0;
     }
 
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .logo-icon {
-      background: #003c8f;
-      width: 48px;
-      height: 48px;
-      border-radius: 28px;
+    .header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: white;
+      letter-spacing: -0.5px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 8px rgba(0,60,143,0.2);
-    }
-
-    .logo-icon i {
-      font-size: 28px;
-      color: white;
-    }
-
-    .logo-text h1 {
-      font-size: 1.7rem;
-      font-weight: 700;
-      letter-spacing: -0.3px;
-      background: linear-gradient(135deg, #003c8f 0%, #0066b3 100%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .logo-text span {
-      font-size: 0.8rem;
-      color: #1e5a8a;
-      font-weight: 500;
-      display: block;
-    }
-
-    .atendimento-badge {
-      background: #25D366;
-      padding: 8px 20px;
-      border-radius: 60px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 500;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    .atendimento-badge i {
-      color: white;
-    }
-
-    .welcome-card {
-      background: white;
-      border-radius: 32px;
-      padding: 1.8rem 2rem;
-      margin-bottom: 2.5rem;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-      border-left: 6px solid #0066b3;
-      display: flex;
+      gap: 12px;
       flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
     }
 
-    .welcome-text h2 {
-      font-size: 1.7rem;
-      font-weight: 600;
-      color: #00264d;
+    .header h1 i {
+      font-size: 2rem;
+      color: white;
     }
 
-    .welcome-text p {
-      color: #2c5a7a;
-      margin-top: 6px;
+    .header p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.9);
+      margin-top: 12px;
+      font-weight: 400;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .help-icon {
-      background: #eef2ff;
-      border-radius: 60px;
-      padding: 8px 18px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: #005a9c;
-    }
-
-    /* grid dos botões */
-    .actions-grid {
+    .buttons-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.8rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
       margin-bottom: 3rem;
     }
 
     .action-btn {
       background: white;
-      border-radius: 28px;
-      padding: 1.6rem 0.8rem;
+      border-radius: 1.2rem;
+      padding: 2rem 1.5rem;
       text-align: center;
       cursor: pointer;
-      transition: all 0.25s ease;
-      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.04);
-      border: 1px solid #dce5f5;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
+      transition: all 0.3s ease;
+      color: #0066B3;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     .action-btn:hover {
       transform: translateY(-5px);
-      box-shadow: 0 20px 30px -12px rgba(0, 60, 143, 0.25);
-      border-color: #25D366;
-      background: #fbfeff;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
     }
 
-    .btn-icon {
-      width: 70px;
-      height: 70px;
-      background: linear-gradient(145deg, #eef2ff, #e3eafc);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.2rem;
-      color: #0059b3;
-      transition: 0.2s;
+    .action-btn i {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #0066B3;
     }
 
-    .action-btn:hover .btn-icon {
-      background: #25D366;
-      color: white;
-    }
-
-    .action-btn h3 {
-      font-size: 1.4rem;
+    .action-btn h2 {
+      font-size: 1.5rem;
       font-weight: 700;
-      color: #002d62;
+      margin-bottom: 0.5rem;
+      color: #0066B3;
     }
 
     .action-btn p {
       font-size: 0.85rem;
-      color: #3e6b8c;
-      max-width: 180px;
-      margin: 0 auto;
-    }
-
-    /* card de resumo do contrato */
-    .status-card {
-      background: white;
-      border-radius: 28px;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-      border: 1px solid #e2edff;
-      width: 100%;
-    }
-
-    .status-card h4 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      color: #003c8f;
-      border-left: 4px solid #0066b3;
-      padding-left: 12px;
-    }
-
-    .simulated-list {
-      list-style: none;
-    }
-
-    .simulated-list li {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 0;
-      border-bottom: 1px solid #ecf3fa;
-      color: #1f4662;
-    }
-
-    .simulated-list i {
-      width: 28px;
-      color: #0070c0;
-    }
-
-    /* nova seção de vantagens - quitar contrato antecipadamente */
-    .vantagens-section {
-      background: linear-gradient(135deg, #ffffff 0%, #f0f6ff 100%);
-      border-radius: 28px;
-      padding: 1.8rem 2rem;
-      margin-bottom: 2rem;
-      border: 1px solid #cde0fe;
-      box-shadow: 0 8px 20px rgba(0, 60, 143, 0.08);
-    }
-
-    .vantagens-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 1.5rem;
-    }
-
-    .vantagens-header i {
-      font-size: 2rem;
-      color: #0066b3;
-      background: #e3efff;
-      padding: 12px;
-      border-radius: 60px;
-    }
-
-    .vantagens-header h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #002d62;
-    }
-
-    .vantagens-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .vantagem-item {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      padding: 0.5rem;
-    }
-
-    .vantagem-icon {
-      background: #eef3ff;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .vantagem-icon i {
-      font-size: 1.5rem;
-      color: #0059b3;
-    }
-
-    .vantagem-text h4 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #003c8f;
-      margin-bottom: 6px;
-    }
-
-    .vantagem-text p {
-      font-size: 0.9rem;
-      color: #3a6382;
+      color: #555;
       line-height: 1.4;
     }
 
-    /* botão fixo do WhatsApp */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: #25D366;
-      color: white;
-      border-radius: 60px;
-      padding: 16px 24px;
+    .info-panel {
+      background: white;
+      border-radius: 1.2rem;
+      padding: 1.8rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #0066B3;
+      margin-bottom: 1.2rem;
       display: flex;
       align-items: center;
-      gap: 12px;
-      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-      cursor: pointer;
-      transition: all 0.3s ease;
-      z-index: 100;
+      gap: 10px;
+      border-bottom: 2px solid #e0e7f0;
+      padding-bottom: 0.7rem;
+    }
+
+    .section-title i {
+      color: #0066B3;
+    }
+
+    .contract-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      row-gap: 1.5rem;
+    }
+
+    .detail-card {
+      flex: 1;
+      min-width: 170px;
+    }
+
+    .detail-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       font-weight: 600;
-      border: none;
-      font-size: 1rem;
+      color: #7a8eae;
     }
 
-    .whatsapp-float:hover {
-      transform: scale(1.05);
-      background-color: #20b859;
-      box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
+    .detail-value {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a2c4e;
+      margin-top: 6px;
     }
 
-    .whatsapp-float i {
-      font-size: 1.8rem;
+    .status-badge {
+      background: #e6f0ff;
+      color: #0066B3;
+      padding: 4px 12px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: inline-block;
     }
 
-    footer {
-      margin-top: 2rem;
-      text-align: center;
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    .installments-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .installments-table th {
+      text-align: left;
+      padding: 1rem 0.8rem;
+      color: #7a8eae;
+      font-weight: 600;
       font-size: 0.8rem;
-      color: #2e5f88;
-      border-top: 1px solid #cddeff;
-      padding-top: 1.8rem;
+      border-bottom: 1px solid #e0e7f0;
     }
 
-    @media (max-width: 700px) {
-      body { padding: 1rem; }
-      .action-btn h3 { font-size: 1.2rem; }
-      .main-header { flex-direction: column; gap: 12px; text-align: center; }
-      .welcome-text h2 { font-size: 1.3rem; }
-      .whatsapp-float { padding: 12px 18px; bottom: 20px; right: 20px; font-size: 0.85rem; }
-      .whatsapp-float i { font-size: 1.4rem; }
-      .vantagens-header h3 { font-size: 1.2rem; }
-      .vantagem-item { flex-direction: column; align-items: center; text-align: center; }
+    .installments-table td {
+      padding: 1rem 0.8rem;
+      color: #1a2c4e;
+      border-bottom: 1px solid #eef2f8;
+      font-weight: 500;
+    }
+
+    .paid-status {
+      background: #e6f7ed;
+      color: #2e7d54;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .pending-status {
+      background: #fff3e0;
+      color: #c97e0a;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .btn-small {
+      background: #0066B3;
+      border: none;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-small:hover {
+      background: #004d8c;
+      transform: scale(1.02);
+    }
+
+    .institutional-box {
+      background: #eef4fc;
+      border-radius: 1rem;
+      padding: 1rem 1.2rem;
+      margin-top: 1.2rem;
+      border: 1px solid #cde0f0;
+    }
+
+    .institutional-box p {
+      font-size: 0.8rem;
+      color: #1a3a5c;
+      line-height: 1.5;
+      margin-bottom: 0.3rem;
+    }
+
+    .institutional-box i {
+      color: #0066B3;
+      margin-right: 8px;
+      font-size: 0.85rem;
+    }
+
+    .institutional-box .quote {
+      font-style: italic;
+      font-weight: 600;
+      color: #0066B3;
+    }
+
+    .dark-blue-box {
+      background: #004d8c;
+      border-radius: 1rem;
+      padding: 1.2rem;
+      margin-top: 0;
+      border: none;
+    }
+
+    .dark-blue-box p {
+      color: white;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 0.3rem;
+    }
+
+    .dark-blue-box i {
+      color: white;
+      margin-right: 8px;
+    }
+
+    .dark-blue-box .quote {
+      font-style: italic;
+      font-weight: 600;
+      color: white;
+    }
+
+    .whatsapp-link {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-decoration: none;
+      margin-left: 8px;
+      transition: all 0.2s;
+    }
+
+    .whatsapp-link:hover {
+      background: #128C7E;
+      transform: scale(1.02);
+    }
+
+    .footer {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.7rem;
+    }
+
+    .toast-msg {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: #1a2c4e;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      z-index: 1000;
+      transition: all 0.25s ease;
+      opacity: 0;
+      visibility: hidden;
+      white-space: nowrap;
+      pointer-events: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .toast-msg.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .dashboard {
+        padding: 1rem;
+      }
+      .header h1 {
+        font-size: 1.5rem;
+      }
+      .action-btn {
+        padding: 1.5rem 1rem;
+      }
+      .action-btn h2 {
+        font-size: 1.2rem;
+      }
+      .detail-value {
+        font-size: 1rem;
+      }
+      .toast-msg {
+        white-space: normal;
+        text-align: center;
+        width: 85%;
+        font-size: 0.8rem;
+      }
+      .whatsapp-link {
+        display: inline-block;
+        margin-top: 5px;
+        margin-left: 0;
+      }
     }
   </style>
 </head>
 <body>
-
-<div class="portal-container">
-  <!-- cabeçalho -->
-  <div class="main-header">
-    <div class="logo-area">
-      <div class="logo-icon">
-        <i class="fas fa-hand-holding-usd"></i>
-      </div>
-      <div class="logo-text">
-        <h1>Portal Atendimento</h1>
-        <span>soluções financeiras inteligentes</span>
-      </div>
-    </div>
-    <div class="atendimento-badge">
+<div class="dashboard">
+  <div class="header">
+    <h1>
       <i class="fab fa-whatsapp"></i>
-      <span>Atendimento via WhatsApp</span>
-    </div>
+      Central de Relacionamento
+    </h1>
+    <p>Gerencie seu contrato, negocie dívidas e acompanhe suas parcelas em um só lugar</p>
   </div>
 
-  <!-- boas vindas -->
-  <div class="welcome-card">
-    <div class="welcome-text">
-      <h2>Olá, cliente!</h2>
-      <p>Gerencie seu contrato com agilidade e segurança. Escolha uma opção abaixo e fale conosco pelo WhatsApp.</p>
+  <div class="buttons-grid">
+    <div class="action-btn" id="btnBoleto">
+      <i class="fas fa-barcode"></i>
+      <h2>2ª via de boleto</h2>
+      <p>Emita segunda via do boleto atualizado</p>
     </div>
-    <div class="help-icon">
-      <i class="fab fa-whatsapp"></i> Atendimento via WhatsApp
+    <div class="action-btn" id="btnRenegociacao">
+      <i class="fas fa-handshake"></i>
+      <h2>Renegociação</h2>
+      <p>Negocie suas dívidas com condições especiais</p>
     </div>
-  </div>
-
-  <!-- grid dos 4 botões principais -->
-  <div class="actions-grid">
-    <div class="action-btn" data-action="quit">
-      <div class="btn-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-      <h3>QUITAR CONTRATO</h3>
-      <p>Liquide seu saldo devedor com condições especiais</p>
+    <div class="action-btn" id="btnQuitacao">
+      <i class="fas fa-check-circle"></i>
+      <h2>Quitação</h2>
+      <p>Quite seu contrato antecipadamente</p>
     </div>
-    <div class="action-btn" data-action="antecipar">
-      <div class="btn-icon"><i class="fas fa-calendar-check"></i></div>
-      <h3>ANTECIPAR PARCELAS</h3>
-      <p>Pague parcelas futuras com desconto de juros</p>
-    </div>
-    <div class="action-btn" data-action="segunda-via">
-      <div class="btn-icon"><i class="fas fa-receipt"></i></div>
-      <h3>2VIA</h3>
-      <p>Obtenha segunda via do boleto / fatura</p>
-    </div>
-    <div class="action-btn" data-action="regularizar">
-      <div class="btn-icon"><i class="fas fa-clock"></i></div>
-      <h3>REGULARIZAR PARCELAS EM ATRASO</h3>
-      <p>Negocie débitos e renegocie seu contrato</p>
-    </div>
-  </div>
-
-  <!-- resumo do contrato -->
-  <div class="status-card">
-    <h4><i class="fas fa-chart-line"></i> Resumo do contrato (exemplo)</h4>
-    <ul class="simulated-list">
-      <li><i class="fas fa-id-card"></i> Contrato: <strong>FIN-9876-XPTO</strong> | Produto: Financiamento</li>
-      <li><i class="fas fa-dollar-sign"></i> Saldo devedor atual: <strong>R$ 8.742,50</strong></li>
-      <li><i class="fas fa-calendar-alt"></i> Próxima parcela: Vencimento 10/06/2026 - R$ 389,70</li>
-      <li><i class="fas fa-exclamation-triangle"></i> Parcelas em atraso: <strong style="color:#c7452c;">2</strong> (regularize já!)</li>
-    </ul>
-  </div>
-
-  <!-- SEÇÃO DE VANTAGENS: Quitar contrato antecipadamente -->
-  <div class="vantagens-section">
-    <div class="vantagens-header">
+    <div class="action-btn" id="btnRegularizacao">
       <i class="fas fa-chart-line"></i>
-      <h3>Vantagens de quitar seu contrato antecipadamente</h3>
-    </div>
-    <div class="vantagens-grid">
-      <div class="vantagem-item">
-        <div class="vantagem-icon">
-          <i class="fas fa-percent"></i>
-        </div>
-        <div class="vantagem-text">
-          <h4>Desconto em juros</h4>
-          <p>Ao quitar antes do prazo, você paga apenas os juros até a data da liquidação, com redução significativa do valor total.</p>
-        </div>
-      </div>
-      <div class="vantagem-item">
-        <div class="vantagem-icon">
-          <i class="fas fa-file-signature"></i>
-        </div>
-        <div class="vantagem-text">
-          <h4>Baixa da dívida</h4>
-          <p>Seu nome fica livre de qualquer pendência e o contrato é encerrado oficialmente, trazendo tranquilidade financeira.</p>
-        </div>
-      </div>
-      <div class="vantagem-item">
-        <div class="vantagem-icon">
-          <i class="fas fa-chart-simple"></i>
-        </div>
-        <div class="vantagem-text">
-          <h4>Liberação de limite</h4>
-          <p>Com o contrato quitado, você recupera sua capacidade de crédito e pode contratar novos produtos com melhores condições.</p>
-        </div>
-      </div>
-      <div class="vantagem-item">
-        <div class="vantagem-icon">
-          <i class="fas fa-hand-holding-heart"></i>
-        </div>
-        <div class="vantagem-text">
-          <h4>Planejamento financeiro</h4>
-          <p>Elimine parcelas futuras do seu orçamento mensal e tenha mais liberdade para investir em outros objetivos.</p>
-        </div>
-      </div>
+      <h2>Regularização</h2>
+      <p>Regularize débitos e recupere seu crédito</p>
     </div>
   </div>
 
-  <footer>
-    <i class="fab fa-whatsapp"></i> Atendimento via WhatsApp · <i class="fas fa-lock"></i> Ambiente seguro e criptografado
-  </footer>
+  <div class="info-panel">
+    <div class="section-title">
+      <i class="fas fa-file-contract"></i>
+      Meu contrato
+    </div>
+    <div class="contract-details">
+      <div class="detail-card">
+        <div class="detail-label">Número do contrato</div>
+        <div class="detail-value">0042 3891 7</div>
+      </div>
+      <div class="detail-card">
+        <div class="detail-label">Produto</div>
+        <div class="detail-value">Crédito Pessoal</div>
+      </div>
+      <div class="detail-card">
+        <div class="detail-label">Saldo devedor</div>
+        <div class="detail-value">R$ 3.280,45</div>
+      </div>
+      <div class="detail-card">
+        <div class="detail-label">Situação</div>
+        <div class="detail-value"><span class="status-badge"><i class="fas fa-check-circle"></i> Em dia</span></div>
+      </div>
+      <div class="detail-card">
+        <div class="detail-label">Próximo vencimento</div>
+        <div class="detail-value">15/05/2026</div>
+      </div>
+    </div>
+
+    <div class="institutional-box">
+      <p><i class="fab fa-whatsapp"></i> <strong class="quote">"Atendimento via WhatsApp: (11) 96146-1174"</strong> <a href="https://wa.me/5511961461174" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i> Falar agora</a></p>
+      <p><i class="fas fa-chart-line"></i> <strong class="quote">"Sua vida em movimento. Seu dinheiro rendendo."</strong></p>
+      <p><i class="fas fa-hand-holding-heart"></i> <strong class="quote">"A gente faz acontecer. Conte com a gente para realizar seus planos."</strong></p>
+      <p><i class="fas fa-rocket"></i> <strong class="quote">"Transparência, inovação e solidez para transformar sua relação com o dinheiro."</strong></p>
+    </div>
+  </div>
+
+  <div class="info-panel">
+    <div class="section-title">
+      <i class="fas fa-calendar-alt"></i>
+      Acompanhamento de parcelas
+    </div>
+    <div class="table-wrapper">
+      <table class="installments-table">
+        <thead>
+          <tr><th>Vencimento</th><th>Valor</th><th>Status</th><th>Ação</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>15/01/2026</td><td>R$ 289,90</td><td><span class="paid-status"><i class="fas fa-check"></i> Pago</span></td><td><button class="btn-small boleto-row" data-parcela="Janeiro/2026">2ª via</button></td></tr>
+          <tr><td>15/02/2026</td><td>R$ 289,90</td><td><span class="paid-status"><i class="fas fa-check"></i> Pago</span></td><td><button class="btn-small boleto-row" data-parcela="Fevereiro/2026">2ª via</button></td></tr>
+          <tr><td>15/03/2026</td><td>R$ 289,90</td><td><span class="pending-status"><i class="fas fa-clock"></i> Pendente</span></td><td><button class="btn-small boleto-row" data-parcela="Março/2026">2ª via</button></td></tr>
+          <tr><td>15/04/2026</td><td>R$ 289,90</td><td><span class="pending-status"><i class="fas fa-hourglass-half"></i> A vencer</span></td><td><button class="btn-small boleto-row" data-parcela="Abril/2026">2ª via</button></td></tr>
+          <tr><td>15/05/2026</td><td>R$ 289,90</td><td><span class="pending-status">Prevista</span></td><td><button class="btn-small boleto-row" data-parcela="Maio/2026">2ª via</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="institutional-box">
+      <p><i class="fab fa-whatsapp"></i> <strong class="quote">"Dúvidas? Fale conosco pelo WhatsApp (11) 96146-1174"</strong> <a href="https://wa.me/5511961461174" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i> Chamar agora</a></p>
+      <p><i class="fas fa-shield-alt"></i> <strong class="quote">"Segurança que você confia. Soluções que você aprova."</strong></p>
+      <p><i class="fas fa-users"></i> <strong class="quote">"Estamos juntos com você, do planejamento à realização."</strong></p>
+      <p><i class="fas fa-brain"></i> <strong class="quote">"Inteligência financeira para você viver sem preocupações."</strong></p>
+    </div>
+
+    <div style="margin-top: 1rem; font-size: 0.7rem; color: #7a8eae; padding: 0.5rem 0;">
+      <i class="fas fa-info-circle"></i> Utilize os botões acima para negociar débitos, emitir boletos ou regularizar seu contrato.
+    </div>
+  </div>
+
+  <!-- CAIXA INSTITUCIONAL COM WHATSAPP -->
+  <div class="info-panel" style="padding: 0; overflow: hidden;">
+    <div class="dark-blue-box">
+      <p><i class="fas fa-quote-left"></i> <strong class="quote">"Mais de 30 anos transformando vidas. Solidez, credibilidade e um futuro feito sob medida para você."</strong></p>
+      <p style="margin-top: 10px;"><i class="fab fa-whatsapp"></i> <strong>WhatsApp Central:</strong> (11) 96146-1174 <a href="https://wa.me/5511961461174" target="_blank" class="whatsapp-link" style="background: white; color: #25D366;"><i class="fab fa-whatsapp"></i> Clique aqui</a></p>
+      <p style="margin-top: 8px; font-size: 0.75rem; opacity: 0.8;"><i class="fas fa-clock"></i> Atendimento 24h por WhatsApp</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>© Central de Relacionamento • WhatsApp (11) 96146-1174 • Gerencie seu contrato, negocie dívidas e acompanhe suas parcelas</span>
+  </div>
 </div>
 
-<!-- Botão flutuante do WhatsApp -->
-<div class="whatsapp-float" id="whatsappFloatBtn">
-  <i class="fab fa-whatsapp"></i>
-  <span>Fale conosco</span>
+<div id="toastMessage" class="toast-msg">
+  <i class="fab fa-whatsapp" style="margin-right: 8px;"></i>
+  <span id="toastText"></span>
 </div>
 
 <script>
-  // NÚMERO ATUALIZADO: WhatsApp no formato internacional (Brasil: 55 + DDD + número)
-  // Número solicitado: 11921474407 -> DDD 11, número 921474407
-  const whatsappNumber = "5511921474407"; // Código 55 + 11 + 921474407
-  
-  // Função para abrir WhatsApp com mensagem personalizada
-  function openWhatsApp(message) {
-    const encodedMessage = encodeURIComponent(message);
-    const url = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-    window.open(url, '_blank');
-  }
-  
-  // Mapeamento das ações para mensagens personalizadas (conteúdo comercial e claro)
-  const actionMessages = {
-    quit: {
-      message: "Olá! Gostaria de solicitar a QUITAÇÃO do meu contrato. Poderia me ajudar com as condições e valores?"
-    },
-    antecipar: {
-      message: "Olá! Tenho interesse em ANTECIPAR parcelas do meu contrato. Gostaria de saber os descontos e condições."
-    },
-    "segunda-via": {
-      message: "Olá! Preciso da 2ª VIA do boleto/fatura do meu contrato. Podem me enviar?"
-    },
-    regularizar: {
-      message: "Olá! Estou com parcelas em ATRASO e gostaria de REGULARIZAR minha situação. Podem me ajudar com uma negociação?"
-    }
-  };
-  
-  // Adiciona evento de clique a todos os botões de ação (cards principais)
-  document.querySelectorAll('.action-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const action = btn.getAttribute('data-action');
-      
-      if (action && actionMessages[action]) {
-        // Abre WhatsApp com a mensagem específica da ação
-        openWhatsApp(actionMessages[action].message);
-      } else {
-        // Mensagem padrão caso não tenha mapeamento (segurança)
-        openWhatsApp("Olá! Gostaria de mais informações sobre os serviços do Portal de Atendimento.");
-      }
-    });
-  });
-  
-  // Botão flutuante do WhatsApp (rodapé flutuante)
-  const whatsappFloat = document.getElementById('whatsappFloatBtn');
-  if (whatsappFloat) {
-    whatsappFloat.addEventListener('click', () => {
-      openWhatsApp("Olá! Gostaria de atendimento sobre os serviços financeiros.");
-    });
-  }
-  
-  // Também adiciona clique ao badge do cabeçalho (botão "Atendimento via WhatsApp")
-  const headerBadge = document.querySelector('.atendimento-badge');
-  if (headerBadge) {
-    headerBadge.addEventListener('click', () => {
-      openWhatsApp("Olá! Gostaria de atendimento no Portal de Soluções Financeiras.");
-    });
+  const toast = document.getElementById('toastMessage');
+  const toastSpan = document.getElementById('toastText');
+
+  function showMessage(msg) {
+    toastSpan.innerText = msg;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 2800);
   }
 
-  // EXTRA: Adiciona também o clique no ícone de ajuda do welcome-card (caso o usuário queira)
-  const helpIconDiv = document.querySelector('.help-icon');
-  if (helpIconDiv) {
-    helpIconDiv.addEventListener('click', () => {
-      openWhatsApp("Olá! Vi no portal que posso falar pelo WhatsApp. Gostaria de suporte.");
+  // Botão 2 via de boleto
+  const btnBoleto = document.getElementById('btnBoleto');
+  btnBoleto.addEventListener('click', () => {
+    showMessage('📄 2ª via de boleto gerada! "A gente faz acontecer" - documento enviado para seu WhatsApp (11) 96146-1174.');
+  });
+
+  // Botão Renegociação
+  const btnRenegociacao = document.getElementById('btnRenegociacao');
+  btnRenegociacao.addEventListener('click', () => {
+    showMessage('🔄 Renegociação disponível! Parcele sua dívida em até 24x. Fale conosco pelo WhatsApp (11) 96146-1174 para condições especiais.');
+  });
+
+  // Botão Quitação
+  const btnQuitacao = document.getElementById('btnQuitacao');
+  btnQuitacao.addEventListener('click', () => {
+    showMessage('💰 Quitação antecipada: valor com desconto de R$ 3.042,90. "Sua vida em movimento. Seu dinheiro rendendo" - quite com vantagens. WhatsApp (11) 96146-1174.');
+  });
+
+  // Botão Regularização
+  const btnRegularizacao = document.getElementById('btnRegularizacao');
+  btnRegularizacao.addEventListener('click', () => {
+    showMessage('✅ Regularização de débitos: até 60% de desconto em multas. "Estamos juntos com você" - negocie agora pelo WhatsApp (11) 96146-1174.');
+  });
+
+  // Botões de 2 via dentro da tabela
+  const botoesTabela = document.querySelectorAll('.boleto-row');
+  botoesTabela.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const parcela = btn.getAttribute('data-parcela') || 'parcela selecionada';
+      showMessage(`📑 2ª via do boleto da parcela ${parcela} solicitada. Em breve você receberá no WhatsApp (11) 96146-1174.`);
     });
-  }
+  });
+
+  setTimeout(() => {
+    showMessage('Bem-vindo à Central | Atendimento via WhatsApp (11) 96146-1174 - "Sua vida em movimento. Seu dinheiro rendendo"');
+  }, 400);
 </script>
 </body>
 </html>
