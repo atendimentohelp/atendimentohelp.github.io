@@ -27,8 +27,8 @@
 
     .header {
       text-align: center;
-      margin-bottom: 3rem;
-      padding: 1rem 0;
+      margin-bottom: 2rem;
+      padding: 0.5rem 0;
     }
 
     .header h1 {
@@ -58,6 +58,22 @@
       margin-right: auto;
     }
 
+    /* Container da imagem */
+    .image-container {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      background: rgba(255,255,255,0.1);
+      border-radius: 1rem;
+      padding: 0.5rem;
+    }
+
+    .brand-image {
+      max-width: 100%;
+      height: auto;
+      max-height: 100px;
+      object-fit: contain;
+    }
+
     .buttons-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -74,6 +90,8 @@
       transition: all 0.3s ease;
       color: #0066B3;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-decoration: none;
+      display: block;
     }
 
     .action-btn:hover {
@@ -161,68 +179,6 @@
       display: inline-block;
     }
 
-    .table-wrapper {
-      overflow-x: auto;
-    }
-
-    .installments-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .installments-table th {
-      text-align: left;
-      padding: 1rem 0.8rem;
-      color: #7a8eae;
-      font-weight: 600;
-      font-size: 0.8rem;
-      border-bottom: 1px solid #e0e7f0;
-    }
-
-    .installments-table td {
-      padding: 1rem 0.8rem;
-      color: #1a2c4e;
-      border-bottom: 1px solid #eef2f8;
-      font-weight: 500;
-    }
-
-    .paid-status {
-      background: #e6f7ed;
-      color: #2e7d54;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      display: inline-block;
-    }
-
-    .pending-status {
-      background: #fff3e0;
-      color: #c97e0a;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      display: inline-block;
-    }
-
-    .btn-small {
-      background: #0066B3;
-      border: none;
-      color: white;
-      padding: 6px 14px;
-      border-radius: 30px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .btn-small:hover {
-      background: #004d8c;
-      transform: scale(1.02);
-    }
-
     .institutional-box {
       background: #eef4fc;
       border-radius: 1rem;
@@ -303,32 +259,6 @@
       font-size: 0.7rem;
     }
 
-    .toast-msg {
-      position: fixed;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%) translateY(20px);
-      background: #1a2c4e;
-      color: white;
-      padding: 12px 28px;
-      border-radius: 50px;
-      font-weight: 500;
-      font-size: 0.9rem;
-      z-index: 1000;
-      transition: all 0.25s ease;
-      opacity: 0;
-      visibility: hidden;
-      white-space: nowrap;
-      pointer-events: none;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-
-    .toast-msg.show {
-      opacity: 1;
-      visibility: visible;
-      transform: translateX(-50%) translateY(0);
-    }
-
     @media (max-width: 768px) {
       .dashboard {
         padding: 1rem;
@@ -345,22 +275,24 @@
       .detail-value {
         font-size: 1rem;
       }
-      .toast-msg {
-        white-space: normal;
-        text-align: center;
-        width: 85%;
-        font-size: 0.8rem;
-      }
       .whatsapp-link {
         display: inline-block;
         margin-top: 5px;
         margin-left: 0;
+      }
+      .brand-image {
+        max-height: 70px;
       }
     }
   </style>
 </head>
 <body>
 <div class="dashboard">
+  <!-- Imagem com caminho correto -->
+  <div class="image-container">
+    <img src="prediovb" alt="Logo" class="brand-image" id="brandImage">
+  </div>
+
   <div class="header">
     <h1>
       <i class="fab fa-whatsapp"></i>
@@ -369,29 +301,31 @@
     <p>Gerencie seu contrato, negocie dívidas e acompanhe suas parcelas em um só lugar</p>
   </div>
 
+  <!-- Botões principais - TODOS enviando para o WhatsApp -->
   <div class="buttons-grid">
-    <div class="action-btn" id="btnBoleto">
+    <a href="https://wa.me/5511961461174?text=Olá%2C%20gostaria%20de%20solicitar%20a%202%C2%AA%20via%20do%20meu%20boleto" target="_blank" class="action-btn" id="btnBoleto">
       <i class="fas fa-barcode"></i>
       <h2>2ª via de boleto</h2>
       <p>Emita segunda via do boleto atualizado</p>
-    </div>
-    <div class="action-btn" id="btnRenegociacao">
+    </a>
+    <a href="https://wa.me/5511961461174?text=Olá%2C%20gostaria%20de%20renegociar%20minhas%20dívidas" target="_blank" class="action-btn" id="btnRenegociacao">
       <i class="fas fa-handshake"></i>
       <h2>Renegociação</h2>
       <p>Negocie suas dívidas com condições especiais</p>
-    </div>
-    <div class="action-btn" id="btnQuitacao">
+    </a>
+    <a href="https://wa.me/5511961461174?text=Olá%2C%20gostaria%20de%20quitar%20meu%20contrato%20antecipadamente" target="_blank" class="action-btn" id="btnQuitacao">
       <i class="fas fa-check-circle"></i>
       <h2>Quitação</h2>
       <p>Quite seu contrato antecipadamente</p>
-    </div>
-    <div class="action-btn" id="btnRegularizacao">
+    </a>
+    <a href="https://wa.me/5511961461174?text=Olá%2C%20gostaria%20de%20regularizar%20meus%20débitos" target="_blank" class="action-btn" id="btnRegularizacao">
       <i class="fas fa-chart-line"></i>
       <h2>Regularização</h2>
       <p>Regularize débitos e recupere seu crédito</p>
-    </div>
+    </a>
   </div>
 
+  <!-- Informações do contrato -->
   <div class="info-panel">
     <div class="section-title">
       <i class="fas fa-file-contract"></i>
@@ -420,6 +354,7 @@
       </div>
     </div>
 
+    <!-- Caixa com texto institucional e WhatsApp -->
     <div class="institutional-box">
       <p><i class="fab fa-whatsapp"></i> <strong class="quote">"Atendimento via WhatsApp: (11) 96146-1174"</strong> <a href="https://wa.me/5511961461174" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i> Falar agora</a></p>
       <p><i class="fas fa-chart-line"></i> <strong class="quote">"Sua vida em movimento. Seu dinheiro rendendo."</strong></p>
@@ -428,44 +363,56 @@
     </div>
   </div>
 
+  <!-- Bloco 1 de textos institucionais -->
   <div class="info-panel">
     <div class="section-title">
-      <i class="fas fa-calendar-alt"></i>
-      Acompanhamento de parcelas
+      <i class="fas fa-building"></i>
+      Nossa história
     </div>
-    <div class="table-wrapper">
-      <table class="installments-table">
-        <thead>
-          <tr><th>Vencimento</th><th>Valor</th><th>Status</th><th>Ação</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>15/01/2026</td><td>R$ 289,90</td><td><span class="paid-status"><i class="fas fa-check"></i> Pago</span></td><td><button class="btn-small boleto-row" data-parcela="Janeiro/2026">2ª via</button></td></tr>
-          <tr><td>15/02/2026</td><td>R$ 289,90</td><td><span class="paid-status"><i class="fas fa-check"></i> Pago</span></td><td><button class="btn-small boleto-row" data-parcela="Fevereiro/2026">2ª via</button></td></tr>
-          <tr><td>15/03/2026</td><td>R$ 289,90</td><td><span class="pending-status"><i class="fas fa-clock"></i> Pendente</span></td><td><button class="btn-small boleto-row" data-parcela="Março/2026">2ª via</button></td></tr>
-          <tr><td>15/04/2026</td><td>R$ 289,90</td><td><span class="pending-status"><i class="fas fa-hourglass-half"></i> A vencer</span></td><td><button class="btn-small boleto-row" data-parcela="Abril/2026">2ª via</button></td></tr>
-          <tr><td>15/05/2026</td><td>R$ 289,90</td><td><span class="pending-status">Prevista</span></td><td><button class="btn-small boleto-row" data-parcela="Maio/2026">2ª via</button></td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="institutional-box">
-      <p><i class="fab fa-whatsapp"></i> <strong class="quote">"Dúvidas? Fale conosco pelo WhatsApp (11) 96146-1174"</strong> <a href="https://wa.me/5511961461174" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i> Chamar agora</a></p>
-      <p><i class="fas fa-shield-alt"></i> <strong class="quote">"Segurança que você confia. Soluções que você aprova."</strong></p>
-      <p><i class="fas fa-users"></i> <strong class="quote">"Estamos juntos com você, do planejamento à realização."</strong></p>
-      <p><i class="fas fa-brain"></i> <strong class="quote">"Inteligência financeira para você viver sem preocupações."</strong></p>
-    </div>
-
-    <div style="margin-top: 1rem; font-size: 0.7rem; color: #7a8eae; padding: 0.5rem 0;">
-      <i class="fas fa-info-circle"></i> Utilize os botões acima para negociar débitos, emitir boletos ou regularizar seu contrato.
+    <div class="institutional-box" style="margin-top: 0;">
+      <p><i class="fas fa-trophy"></i> <strong class="quote">"Mais de 30 anos transformando a vida financeira dos brasileiros."</strong></p>
+      <p><i class="fas fa-star"></i> <strong class="quote">"Referência em crédito pessoal, consignado e financiamento de veículos."</strong></p>
+      <p><i class="fas fa-heart"></i> <strong class="quote">"Trabalhamos para oferecer as melhores soluções, com taxas justas e condições que cabem no seu bolso."</strong></p>
+      <p><i class="fas fa-globe"></i> <strong class="quote">"Milhares de clientes satisfeitos em todo o Brasil."</strong></p>
     </div>
   </div>
 
-  <!-- CAIXA INSTITUCIONAL COM WHATSAPP -->
+  <!-- Bloco 2 de textos institucionais -->
+  <div class="info-panel">
+    <div class="section-title">
+      <i class="fas fa-medal"></i>
+      Nossos valores
+    </div>
+    <div class="institutional-box" style="margin-top: 0;">
+      <p><i class="fas fa-shield-alt"></i> <strong class="quote">"Segurança que você confia. Soluções que você aprova."</strong></p>
+      <p><i class="fas fa-users"></i> <strong class="quote">"Estamos juntos com você, do planejamento à realização."</strong></p>
+      <p><i class="fas fa-brain"></i> <strong class="quote">"Inteligência financeira para você viver sem preocupações."</strong></p>
+      <p><i class="fas fa-handshake"></i> <strong class="quote">"Relacionamento transparente e próximo do cliente."</strong></p>
+      <p><i class="fas fa-lightbulb"></i> <strong class="quote">"Inovação constante para melhor atender você."</strong></p>
+    </div>
+  </div>
+
+  <!-- Bloco 3 de textos institucionais -->
+  <div class="info-panel">
+    <div class="section-title">
+      <i class="fas fa-bullhorn"></i>
+      Compromisso com você
+    </div>
+    <div class="institutional-box" style="margin-top: 0;">
+      <p><i class="fas fa-clock"></i> <strong class="quote">"Compromisso com a excelência no atendimento."</strong></p>
+      <p><i class="fas fa-lock"></i> <strong class="quote">"Tecnologia de ponta para proteger seus dados e transações."</strong></p>
+      <p><i class="fas fa-chart-simple"></i> <strong class="quote">"Educação financeira para você tomar as melhores decisões."</strong></p>
+      <p><i class="fas fa-phone-alt"></i> <strong class="quote">"Canais de atendimento sempre disponíveis para você."</strong></p>
+    </div>
+  </div>
+
+  <!-- CAIXA INSTITUCIONAL FORTE COM WHATSAPP -->
   <div class="info-panel" style="padding: 0; overflow: hidden;">
     <div class="dark-blue-box">
-      <p><i class="fas fa-quote-left"></i> <strong class="quote">"Mais de 30 anos transformando vidas. Solidez, credibilidade e um futuro feito sob medida para você."</strong></p>
+      <p><i class="fas fa-quote-left"></i> <strong class="quote">"A gente faz acontecer. Conte com a gente para realizar seus sonhos."</strong></p>
       <p style="margin-top: 10px;"><i class="fab fa-whatsapp"></i> <strong>WhatsApp Central:</strong> (11) 96146-1174 <a href="https://wa.me/5511961461174" target="_blank" class="whatsapp-link" style="background: white; color: #25D366;"><i class="fab fa-whatsapp"></i> Clique aqui</a></p>
       <p style="margin-top: 8px; font-size: 0.75rem; opacity: 0.8;"><i class="fas fa-clock"></i> Atendimento 24h por WhatsApp</p>
+      <p style="margin-top: 5px; font-size: 0.7rem; opacity: 0.7;"><i class="fas fa-headset"></i> Tire todas as suas dúvidas, negocie dívidas, peça 2ª via de boletos e muito mais</p>
     </div>
   </div>
 
@@ -474,60 +421,35 @@
   </div>
 </div>
 
-<div id="toastMessage" class="toast-msg">
-  <i class="fab fa-whatsapp" style="margin-right: 8px;"></i>
-  <span id="toastText"></span>
-</div>
-
 <script>
-  const toast = document.getElementById('toastMessage');
-  const toastSpan = document.getElementById('toastText');
-
-  function showMessage(msg) {
-    toastSpan.innerText = msg;
-    toast.classList.add('show');
-    setTimeout(() => {
-      toast.classList.remove('show');
-    }, 2800);
-  }
-
-  // Botão 2 via de boleto
-  const btnBoleto = document.getElementById('btnBoleto');
-  btnBoleto.addEventListener('click', () => {
-    showMessage('📄 2ª via de boleto gerada! "A gente faz acontecer" - documento enviado para seu WhatsApp (11) 96146-1174.');
-  });
-
-  // Botão Renegociação
-  const btnRenegociacao = document.getElementById('btnRenegociacao');
-  btnRenegociacao.addEventListener('click', () => {
-    showMessage('🔄 Renegociação disponível! Parcele sua dívida em até 24x. Fale conosco pelo WhatsApp (11) 96146-1174 para condições especiais.');
-  });
-
-  // Botão Quitação
-  const btnQuitacao = document.getElementById('btnQuitacao');
-  btnQuitacao.addEventListener('click', () => {
-    showMessage('💰 Quitação antecipada: valor com desconto de R$ 3.042,90. "Sua vida em movimento. Seu dinheiro rendendo" - quite com vantagens. WhatsApp (11) 96146-1174.');
-  });
-
-  // Botão Regularização
-  const btnRegularizacao = document.getElementById('btnRegularizacao');
-  btnRegularizacao.addEventListener('click', () => {
-    showMessage('✅ Regularização de débitos: até 60% de desconto em multas. "Estamos juntos com você" - negocie agora pelo WhatsApp (11) 96146-1174.');
-  });
-
-  // Botões de 2 via dentro da tabela
-  const botoesTabela = document.querySelectorAll('.boleto-row');
-  botoesTabela.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const parcela = btn.getAttribute('data-parcela') || 'parcela selecionada';
-      showMessage(`📑 2ª via do boleto da parcela ${parcela} solicitada. Em breve você receberá no WhatsApp (11) 96146-1174.`);
-    });
-  });
-
-  setTimeout(() => {
-    showMessage('Bem-vindo à Central | Atendimento via WhatsApp (11) 96146-1174 - "Sua vida em movimento. Seu dinheiro rendendo"');
-  }, 400);
+  // Garantir que a imagem carregue corretamente com o nome exato "prediovb"
+  const img = document.getElementById('brandImage');
+  
+  // Se a imagem não carregar, tenta com extensões comuns
+  img.onerror = function() {
+    // Tenta adicionar extensões comuns automaticamente
+    const extensions = ['.png', '.jpg', '.jpeg', '.webp', '.gif', '.PNG', '.JPG'];
+    let currentExt = 0;
+    
+    function tryExtension() {
+      if (currentExt < extensions.length) {
+        img.src = 'prediovb' + extensions[currentExt];
+        currentExt++;
+      } else {
+        // Se nenhuma extensão funcionar, mostra um texto alternativo
+        img.style.display = 'none';
+        const container = document.querySelector('.image-container');
+        const fallback = document.createElement('div');
+        fallback.style.padding = '1rem';
+        fallback.style.color = 'white';
+        fallback.innerHTML = '<i class="fas fa-building" style="font-size: 2rem;"></i>';
+        container.appendChild(fallback);
+      }
+    }
+    
+    img.onerror = tryExtension;
+    tryExtension();
+  };
 </script>
 </body>
 </html>
