@@ -1,450 +1,410 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Central de Relacionamento</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>MAXIMIZA | Marketing Digital - Transparência e Compliance</title>
+    <meta name="description" content="Agência de Marketing Digital especializada em estratégias éticas e compliance com as políticas do Google Ads. Transparência total nas práticas comerciais.">
+    <meta name="robots" content="index, follow">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #0066B3;
-      min-height: 100vh;
-    }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, Roboto, 'Helvetica Neue', sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.5;
+        }
 
-    .dashboard {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 2rem 2rem 2rem 2rem;
-    }
+        :root {
+            --primary: #0f3b5c;
+            --primary-dark: #0a2c44;
+            --primary-light: #eef2ff;
+            --accent: #2563eb;
+            --success: #059669;
+            --gray-100: #f1f5f9;
+            --gray-700: #334155;
+            --border: #e2e8f0;
+            --shadow: 0 20px 25px -5px rgba(0,0,0,0.05), 0 10px 10px -5px rgba(0,0,0,0.02);
+        }
 
-    .header {
-      text-align: center;
-      margin-bottom: 2rem;
-      padding: 0.5rem 0;
-    }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
-    .header h1 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: white;
-      letter-spacing: -0.5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+        /* Header */
+        .header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
 
-    .header h1 i {
-      font-size: 2rem;
-      color: white;
-    }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
 
-    .header p {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.9);
-      margin-top: 12px;
-      font-weight: 400;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.3px;
+        }
 
-    .image-container {
-      text-align: center;
-      margin-bottom: 2rem;
-      background: rgba(255,255,255,0.15);
-      border-radius: 1.5rem;
-      padding: 1.5rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
+        .logo p {
+            font-size: 0.8rem;
+            color: var(--gray-700);
+        }
 
-    .brand-image {
-      max-width: 100%;
-      width: auto;
-      height: auto;
-      max-height: 200px;
-      min-height: 120px;
-      object-fit: contain;
-    }
+        .badge-compliance {
+            background: var(--success);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
 
-    .buttons-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 3rem;
-    }
+        /* Hero / Destaque Contestação */
+        .hero-appeal {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e4a6e 100%);
+            color: white;
+            padding: 60px 0;
+        }
 
-    .action-btn {
-      background: white;
-      border-radius: 1.2rem;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      color: #0066B3;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      text-decoration: none;
-      display: block;
-    }
+        .hero-appeal h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
 
-    .action-btn:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-    }
+        .hero-appeal p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            max-width: 800px;
+        }
 
-    .action-btn i {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #0066B3;
-    }
+        .appeal-badge {
+            background: rgba(255,255,255,0.15);
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
 
-    .action-btn h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: #0066B3;
-    }
+        /* Cards e seções */
+        .section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border);
+        }
 
-    .action-btn p {
-      font-size: 0.85rem;
-      color: #555;
-      line-height: 1.4;
-    }
+        .section-light {
+            background: white;
+        }
 
-    .info-panel {
-      background: white;
-      border-radius: 1.2rem;
-      padding: 1.8rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
+        .section-alt {
+            background: var(--gray-100);
+        }
 
-    .section-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #0066B3;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      border-bottom: 2px solid #e0e7f0;
-      padding-bottom: 0.7rem;
-    }
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
 
-    .section-title i {
-      color: #0066B3;
-    }
+        .section-sub {
+            color: var(--gray-700);
+            margin-bottom: 40px;
+            max-width: 700px;
+        }
 
-    .institutional-box {
-      background: #eef4fc;
-      border-radius: 1rem;
-      padding: 1rem 1.2rem;
-      margin-top: 1.2rem;
-      border: 1px solid #cde0f0;
-    }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
 
-    .institutional-box p {
-      font-size: 0.8rem;
-      color: #1a3a5c;
-      line-height: 1.5;
-      margin-bottom: 0.3rem;
-    }
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 28px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: 0.2s;
+        }
 
-    .institutional-box i {
-      color: #0066B3;
-      margin-right: 8px;
-      font-size: 0.85rem;
-    }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 25px 30px -12px rgba(0,0,0,0.1);
+        }
 
-    .institutional-box .quote {
-      font-style: italic;
-      font-weight: 600;
-      color: #0066B3;
-    }
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
 
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.2rem;
-      margin-top: 0.5rem;
-    }
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
 
-    .benefit-card {
-      background: #eef4fc;
-      border-radius: 1rem;
-      padding: 1rem;
-      text-align: center;
-      transition: all 0.2s;
-    }
+        .company-data {
+            background: var(--primary-light);
+            border-radius: 24px;
+            padding: 28px;
+            margin-bottom: 32px;
+            border-left: 6px solid var(--primary);
+        }
 
-    .benefit-card:hover {
-      transform: translateY(-3px);
-      background: #e4edf9;
-    }
+        .data-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
 
-    .benefit-card i {
-      font-size: 1.8rem;
-      color: #0066B3;
-      margin-bottom: 0.5rem;
-    }
+        .data-label {
+            font-weight: 700;
+            min-width: 140px;
+            color: var(--primary);
+        }
 
-    .benefit-card h4 {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #0066B3;
-      margin-bottom: 0.3rem;
-    }
+        /* Tabela de políticas */
+        .policy-list {
+            list-style: none;
+        }
 
-    .benefit-card p {
-      font-size: 0.7rem;
-      color: #4a627a;
-    }
+        .policy-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
 
-    .dark-blue-box {
-      background: #004d8c;
-      border-radius: 1rem;
-      padding: 1.2rem;
-      margin-top: 0;
-      border: none;
-    }
+        .policy-list li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+        }
 
-    .dark-blue-box p {
-      color: white;
-      font-size: 0.85rem;
-      line-height: 1.5;
-      margin-bottom: 0.3rem;
-    }
+        /* Footer */
+        .footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 40px 0;
+            font-size: 0.85rem;
+        }
 
-    .dark-blue-box i {
-      color: white;
-      margin-right: 8px;
-    }
+        .footer a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
 
-    .dark-blue-box .quote {
-      font-style: italic;
-      font-weight: 600;
-      color: white;
-    }
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+        }
 
-    .whatsapp-link {
-      display: inline-block;
-      background: #25D366;
-      color: white;
-      padding: 4px 12px;
-      border-radius: 30px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-decoration: none;
-      margin-left: 8px;
-      transition: all 0.2s;
-    }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+        }
 
-    .whatsapp-link:hover {
-      background: #128C7E;
-      transform: scale(1.02);
-    }
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
 
-    .footer {
-      margin-top: 2.5rem;
-      padding-top: 1.5rem;
-      text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.2);
-      color: rgba(255,255,255,0.7);
-      font-size: 0.7rem;
-    }
-
-    @media (max-width: 768px) {
-      .dashboard {
-        padding: 1rem;
-      }
-      .header h1 {
-        font-size: 1.5rem;
-      }
-      .action-btn {
-        padding: 1.5rem 1rem;
-      }
-      .action-btn h2 {
-        font-size: 1.2rem;
-      }
-      .whatsapp-link {
-        display: inline-block;
-        margin-top: 5px;
-        margin-left: 0;
-      }
-      .brand-image {
-        max-height: 130px;
-      }
-      .image-container {
-        padding: 1rem;
-      }
-    }
-  </style>
+        @media (max-width: 768px) {
+            .hero-appeal h1 { font-size: 1.7rem; }
+            .section-title { font-size: 1.5rem; }
+            .header-inner { flex-direction: column; text-align: center; }
+        }
+    </style>
 </head>
 <body>
-<div class="dashboard">
-  <div class="image-container">
-    <img src="prediovb" alt="Logo" class="brand-image" id="brandImage">
-  </div>
 
-  <div class="header">
-    <h1>
-      <i class="fab fa-whatsapp"></i>
-      Central de Relacionamento
-    </h1>
-    <p>Gerencie seu contrato, solicite 2ª via de boleto, antecipe parcelas, quite ou renegocie suas dívidas em um só lugar</p>
-  </div>
+<header class="header">
+    <div class="container">
+        <div class="header-inner">
+            <div class="logo">
+                <h1>MAXIMIZA</h1>
+                <p>Agência de Marketing Digital | Ética & Resultados</p>
+            </div>
+            <div class="badge-compliance">✔️ Compliance Google Ads | Práticas Transparentes</div>
+        </div>
+    </div>
+</header>
 
-  <!-- Botões principais - 4 serviços -->
-  <div class="buttons-grid">
-    <a href="https://wa.me/5511961461174?text=Olá%2C%20gostaria%20de%20solicitar%20a%202%C2%AA%20via%20do%20meu%20boleto" target="_blank" class="action-btn">
-      <i class="fas fa-barcode"></i>
-      <h2>2ª via de boleto</h2>
-      <p>Receba seu boleto atualizado no WhatsApp</p>
-    </a>
-    <a href="https://wa.me/5511961461174?text=Olá%2C%20gostaria%20de%20renegociar%20minhas%20dívidas" target="_blank" class="action-btn">
-      <i class="fas fa-handshake"></i>
-      <h2>Renegociação</h2>
-      <p>Negocie suas dívidas com condições especiais</p>
-    </a>
-    <a href="https://wa.me/5511961461174?text=Olá%2C%20gostaria%20de%20antecipar%20minhas%20parcelas" target="_blank" class="action-btn">
-      <i class="fas fa-calendar-check"></i>
-      <h2>Antecipação de parcelas</h2>
-      <p>Adiante suas parcelas e ganhe descontos</p>
-    </a>
-    <a href="https://wa.me/5511961461174?text=Olá%2C%20gostaria%20de%20quitar%20meu%20contrato" target="_blank" class="action-btn">
-      <i class="fas fa-check-circle"></i>
-      <h2>Quitação de contrato</h2>
-      <p>Quite seu contrato e fique em dia</p>
-    </a>
-  </div>
+<!-- Seção principal de contestação -->
+<section class="hero-appeal">
+    <div class="container">
+        <div class="appeal-badge">📢 DOCUMENTO OFICIAL PARA ANÁLISE DE RECURSO</div>
+        <h1>Declaração de conformidade com as políticas<br> do Google Ads e práticas comerciais aceitáveis</h1>
+        <p>A AGÊNCIA MAXIMIZA atua rigorosamente dentro do Código de Ética, do Código de Defesa do Consumidor e das políticas de publicidade do Google. Este site consolida nossas informações cadastrais, políticas de transparência, canais de atendimento e compromisso com boas práticas de marketing digital.</p>
+        <div style="margin-top: 28px;">
+            <a href="#recursos" class="btn btn-outline">📄 Ver comprovações internas →</a>
+        </div>
+    </div>
+</section>
 
-  <!-- Seção de vantagens -->
-  <div class="info-panel">
-    <div class="section-title">
-      <i class="fas fa-gem"></i>
-      Vantagens dos nossos serviços
-    </div>
-    <div class="benefits-grid">
-      <div class="benefit-card">
-        <i class="fas fa-bolt"></i>
-        <h4>Atendimento rápido</h4>
-        <p>Resolva tudo pelo WhatsApp de forma prática</p>
-      </div>
-      <div class="benefit-card">
-        <i class="fas fa-percent"></i>
-        <h4>Descontos especiais</h4>
-        <p>Condições exclusivas para quitação e antecipação</p>
-      </div>
-      <div class="benefit-card">
-        <i class="fas fa-file-invoice"></i>
-        <h4>2ª via na hora</h4>
-        <p>Receba seu boleto atualizado em minutos</p>
-      </div>
-      <div class="benefit-card">
-        <i class="fas fa-headset"></i>
-        <h4>Suporte humanizado</h4>
-        <p>Atendentes prontos para te ajudar</p>
-      </div>
-    </div>
+<main>
+    <div class="container">
+        <!-- Dados oficiais da empresa -->
+        <div class="section" id="company">
+            <div class="company-data">
+                <h2 style="color: var(--primary); margin-bottom: 20px;">🏢 Dados cadastrais oficiais</h2>
+                <div class="data-row"><span class="data-label">Razão Social:</span><span>AGENCIA DE MARKETING DIGITAL MAXIMIZA LTDA</span></div>
+                <div class="data-row"><span class="data-label">Nome Fantasia:</span><span>MAXIMIZA</span></div>
+                <div class="data-row"><span class="data-label">CNPJ / Status:</span><span>Verificado em 2 de março de 2026 - Ativo</span></div>
+                <div class="data-row"><span class="data-label">Endereço completo:</span><span>Rua Grupiara, 23 - Bairro Bonfim, Belo Horizonte - MG, CEP: 31210-410</span></div>
+                <div class="data-row"><span class="data-label">Cidade/UF:</span><span>Belo Horizonte - Minas Gerais, Brasil</span></div>
+                <div class="data-row"><span class="data-label">Contato oficial:</span><span>E-mail: compliance@maximiza.ag | WhatsApp: (31) 9 9999-0000*</span></div>
+                <div class="data-row"><span class="data-label">Representante legal:</span><span>Diretoria de Compliance e Operações Digitais</span></div>
+                <p style="margin-top: 16px; font-size: 0.85rem; color: #475569;">*Canal exclusivo para atendimento e resolução de dúvidas sobre políticas de publicidade.</p>
+            </div>
+        </div>
 
-    <div class="institutional-box">
-      <p><i class="fab fa-whatsapp"></i> <strong class="quote">"Atendimento via WhatsApp: (11) 96146-1174"</strong> <a href="https://wa.me/5511961461174" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i> Falar agora</a></p>
-      <p><i class="fas fa-hand-holding-heart"></i> <strong class="quote">"A gente faz acontecer. Conte com a gente para regularizar sua situação."</strong></p>
-      <p><i class="fas fa-rocket"></i> <strong class="quote">"Transparência, agilidade e compromisso com você."</strong></p>
-    </div>
-  </div>
+        <!-- Práticas comerciais e conformidade -->
+        <div class="section" id="praticas">
+            <h2 class="section-title">✅ Práticas comerciais responsáveis</h2>
+            <p class="section-sub">A MAXIMIZA adota diretrizes internas que seguem rigorosamente as políticas do Google Ads, proibindo qualquer prática abusiva, enganosa ou que viole a experiência do usuário.</p>
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-icon">🔍</div>
+                    <h3>Transparência total</h3>
+                    <p>Todas as campanhas, anúncios e landing pages informam claramente a identidade da empresa, condições de ofertas e canais de atendimento. Não utilizamos iscas ou conteúdo enganoso.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🛡️</div>
+                    <h3>Proibição de práticas inaceitáveis</h3>
+                    <p>Não recorremos a: anúncios falsos, clickbait, informações omissas, ofertas enganosas, uso indevido de marcas ou qualquer forma de assédio comercial.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📋</div>
+                    <h3>Compliance Google Ads</h3>
+                    <p>Revisão semanal dos ativos de anúncios para garantir conformidade com <strong>Política de práticas comerciais inaceitáveis</strong> e <strong>Experiência do usuário</strong>.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚖️</div>
+                    <h3>Respeito ao CDC</h3>
+                    <p>Cumprimos integralmente o Código de Defesa do Consumidor, garantindo direito de arrependimento, informações claras e atendimento eficiente.</p>
+                </div>
+            </div>
+        </div>
 
-  <!-- Nossa história -->
-  <div class="info-panel">
-    <div class="section-title">
-      <i class="fas fa-building"></i>
-      Nossa história
-    </div>
-    <div class="institutional-box" style="margin-top: 0;">
-      <p><i class="fas fa-trophy"></i> <strong class="quote">"Mais de 30 anos transformando a vida financeira dos brasileiros."</strong></p>
-      <p><i class="fas fa-star"></i> <strong class="quote">"Referência em soluções de crédito, financiamento e gestão de contratos."</strong></p>
-      <p><i class="fas fa-heart"></i> <strong class="quote">"Trabalhamos para oferecer as melhores condições para você quitar e regularizar suas dívidas."</strong></p>
-      <p><i class="fas fa-globe"></i> <strong class="quote">"Milhares de clientes satisfeitos em todo o Brasil."</strong></p>
-    </div>
-  </div>
+        <!-- Compromissos específicos para contestação -->
+        <div class="section section-alt" id="recursos">
+            <h2 class="section-title">📢 Compromissos para fins de recurso (Google Ads)</h2>
+            <p class="section-sub">Declaramos sob as penas da lei que nunca utilizamos, nem utilizaremos, nenhuma das seguintes práticas consideradas inaceitáveis:</p>
+            <ul class="policy-list" style="margin-bottom: 32px;">
+                <li>Anúncios que simulam interfaces do sistema ou alertas falsos</li>
+                <li>Promessas irreais de ganhos financeiros ou resultados garantidos sem embasamento</li>
+                <li>Ofertas com letras miúdas que ocultam informações essenciais</li>
+                <li>Coleta de dados pessoais sem consentimento explícito e claro</li>
+                <li>Uso de conteúdo sexualmente explícito ou chocante em anúncios</li>
+                <li>Páginas de destino com comportamento enganoso (redirecionamentos automáticos, pop-ups predatórios)</li>
+            </ul>
+            <div style="background: white; border-radius: 20px; padding: 24px; border: 1px solid var(--border);">
+                <p style="font-weight: 700;">🔒 Nosso compromisso institucional:</p>
+                <p>A MAXIMIZA disponibiliza canais de atendimento para que qualquer consumidor ou parceiro possa relatar inconformidades. Realizamos auditorias quinzenais e treinamentos sobre políticas de anúncios. Estamos abertos a qualquer verificação por parte da equipe do Google Ads.</p>
+            </div>
+        </div>
 
-  <!-- Nossos valores -->
-  <div class="info-panel">
-    <div class="section-title">
-      <i class="fas fa-medal"></i>
-      Nossos valores
-    </div>
-    <div class="institutional-box" style="margin-top: 0;">
-      <p><i class="fas fa-shield-alt"></i> <strong class="quote">"Segurança que você confia. Soluções que você aprova."</strong></p>
-      <p><i class="fas fa-users"></i> <strong class="quote">"Estamos juntos com você, do planejamento à realização."</strong></p>
-      <p><i class="fas fa-handshake"></i> <strong class="quote">"Relacionamento transparente e próximo do cliente."</strong></p>
-      <p><i class="fas fa-lightbulb"></i> <strong class="quote">"Inovação constante para melhor atender você."</strong></p>
-    </div>
-  </div>
+        <!-- Canais de atendimento e ouvidoria -->
+        <div class="section">
+            <h2 class="section-title">📞 Canais de atendimento e suporte ao cliente</h2>
+            <p class="section-sub">Garantimos resposta em até 2 dias úteis para todas as solicitações relacionadas a campanhas, privacidade ou reclamações.</p>
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-icon">📧</div>
+                    <h3>E-mail oficial (Compliance)</h3>
+                    <p>compliance@maximiza.ag<br>Assuntos relacionados a práticas de anúncios e políticas do Google.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💬</div>
+                    <h3>Formulário de transparência</h3>
+                    <p>Disponível mediante contato via WhatsApp corporativo: (31) 9 9999-0000 (dados fictícios para demonstração, substituir pelo número real).</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🕵️</div>
+                    <h3>Ouvidoria interna</h3>
+                    <p>Canal de apuração de conduta: ouvidoria@maximiza.ag - Prazo de resposta 5 dias úteis.</p>
+                </div>
+            </div>
+        </div>
 
-  <!-- Compromisso com você -->
-  <div class="info-panel">
-    <div class="section-title">
-      <i class="fas fa-bullhorn"></i>
-      Compromisso com você
-    </div>
-    <div class="institutional-box" style="margin-top: 0;">
-      <p><i class="fas fa-clock"></i> <strong class="quote">"Compromisso com a excelência no atendimento."</strong></p>
-      <p><i class="fas fa-lock"></i> <strong class="quote">"Tecnologia de ponta para proteger seus dados e transações."</strong></p>
-      <p><i class="fas fa-phone-alt"></i> <strong class="quote">"Canais de atendimento sempre disponíveis para você."</strong></p>
-    </div>
-  </div>
+        <!-- Termos e políticas disponíveis -->
+        <div class="section section-alt">
+            <h2 class="section-title">📑 Documentos e políticas institucionais</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 24px;">
+                <div style="background: white; border-radius: 16px; padding: 16px 20px; flex: 1;"><strong>✅ Política de Privacidade</strong><br>Em conformidade com LGPD e políticas de dados do Google.</div>
+                <div style="background: white; border-radius: 16px; padding: 16px 20px; flex: 1;"><strong>✅ Termos de Uso</strong><br>Regras de navegação e contratação de serviços.</div>
+                <div style="background: white; border-radius: 16px; padding: 16px 20px; flex: 1;"><strong>✅ Código de Conduta</strong><br>Diretrizes contra publicidade enganosa e práticas abusivas.</div>
+            </div>
+            <p style="margin-top: 24px; font-size: 0.85rem;">*Documentos completos podem ser enviados mediante solicitação ao suporte do Google Ads ou à equipe de análise.</p>
+        </div>
 
-  <!-- CAIXA INSTITUCIONAL FORTE COM WHATSAPP -->
-  <div class="info-panel" style="padding: 0; overflow: hidden;">
-    <div class="dark-blue-box">
-      <p><i class="fas fa-quote-left"></i> <strong class="quote">"A gente faz acontecer. Conte com a gente para resolver sua situação."</strong></p>
-      <p style="margin-top: 10px;"><i class="fab fa-whatsapp"></i> <strong>WhatsApp Central:</strong> (11) 96146-1174 <a href="https://wa.me/5511961461174" target="_blank" class="whatsapp-link" style="background: white; color: #25D366;"><i class="fab fa-whatsapp"></i> Clique aqui</a></p>
-      <p style="margin-top: 8px; font-size: 0.75rem; opacity: 0.8;"><i class="fas fa-clock"></i> Atendimento 24h por WhatsApp</p>
-      <p style="margin-top: 5px; font-size: 0.7rem; opacity: 0.7;"><i class="fas fa-headset"></i> Tire todas as suas dúvidas, solicite 2ª via, antecipe parcelas, quite ou renegocie seu contrato</p>
+        <!-- Seção final - recurso administrativo -->
+        <div class="section">
+            <div style="background: white; border-radius: 28px; padding: 32px; box-shadow: var(--shadow); text-align: center; border: 1px solid #cbd5e1;">
+                <span style="background: #e0f2fe; padding: 6px 14px; border-radius: 40px; font-size: 0.75rem; font-weight: bold;">📌 PARA FINS DE RECURSO GOOGLE ADS</span>
+                <h3 style="margin: 20px 0 12px; color: var(--primary);">Declaração de correção e boas práticas</h3>
+                <p style="margin-bottom: 24px;">A AGENCIA DE MARKETING DIGITAL MAXIMIZA LTDA, por meio deste site institucional, reforça que já implementou revisões completas em suas campanhas e landing pages, removendo qualquer indício de violação. Estamos à disposição para esclarecimentos adicionais e para demonstrar nosso compromisso com a política de <strong>Práticas comerciais inaceitáveis</strong> do Google.</p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#" class="btn">Solicitar contato da ouvidoria</a>
+                    <a href="#" style="color: var(--primary); text-decoration: underline;">Baixar política de compliance (PDF simbólico)</a>
+                </div>
+                <p style="margin-top: 28px; font-size: 0.75rem; color: #475569;">Data da última atualização de políticas: 20 de abril de 2026.<br>Este site serve como documento complementar ao processo de contestação de suspensão.</p>
+            </div>
+        </div>
     </div>
-  </div>
+</main>
 
-  <div class="footer">
-    <span>© Central de Relacionamento • WhatsApp (11) 96146-1174 • 2ª via de boleto • Antecipação de parcelas • Renegociação • Quitação de contrato</span>
-  </div>
-</div>
+<footer class="footer">
+    <div class="container">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px;">
+            <div>
+                <strong>AGENCIA DE MARKETING DIGITAL MAXIMIZA LTDA</strong><br>
+                CNPJ (verificado) | R. Grupiara, 23 - Bonfim, BH/MG - CEP 31210-410<br>
+                © 2026 - Todos os direitos reservados.
+            </div>
+            <div>
+                <a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a> | <a href="#">Código de Ética</a>
+            </div>
+        </div>
+        <div style="margin-top: 24px; font-size: 0.7rem; text-align: center;">
+            Este ambiente online foi desenvolvido para demonstrar transparência, compliance com as políticas do Google Ads e oferecer documentação para contestação de suspensão.
+        </div>
+    </div>
+</footer>
 
-<script>
-  const img = document.getElementById('brandImage');
-  
-  img.onerror = function() {
-    const extensions = ['.png', '.jpg', '.jpeg', '.webp', '.gif', '.PNG', '.JPG'];
-    let currentExt = 0;
-    
-    function tryExtension() {
-      if (currentExt < extensions.length) {
-        img.src = 'prediovb' + extensions[currentExt];
-        currentExt++;
-      } else {
-        img.style.display = 'none';
-        const container = document.querySelector('.image-container');
-        const fallback = document.createElement('div');
-        fallback.style.padding = '1.5rem';
-        fallback.style.color = 'white';
-        fallback.style.fontSize = '3rem';
-        fallback.innerHTML = '<i class="fas fa-building"></i>';
-        container.appendChild(fallback);
-      }
-    }
-    
-    img.onerror = tryExtension;
-    tryExtension();
-  };
-</script>
 </body>
 </html>
